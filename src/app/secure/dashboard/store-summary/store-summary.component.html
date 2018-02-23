@@ -1,0 +1,119 @@
+<!-- store summary -->
+<div class="store-summary-wrapper" perfectScrollbar>
+  <button class="btn btn-close" (click)="closeStoreSummary()"><span class="icons icon-close-grey"></span></button>
+  <div class="header-row">
+    <div class="store-name">{{summary.name}}</div>
+    <div class="store-status" [ngClass]="[summary.type === 'active' ? 'bg-store-active' : 'bg-store-issue']"></div>
+    <div class="type">{{summary.type}}</div>
+  </div>
+  <div class="data-wrapper pos-aisles">
+    <div class="data-header">
+      <h4>POS AISLES</h4>
+      <span class="icons icon-pos-aisles"></span>
+    </div>
+    <div class="data-sub-header">
+      <div class="stat-label">Total Devices</div>
+      <div class="stat">{{summary.posAisles.totalDevices}}</div>
+    </div>
+    <div class="data-body">
+      <div class="content-box">
+        <div class="left-section">
+          <div class="stat-value-wrapper">
+            <span class="value">{{summary.posAisles.perfect}}</span>
+            <span class="percentage">50%</span>
+          </div>
+          <div class="stat-label">Perfect</div>
+        </div>
+        <div class="right-section">
+          <span class="icon-perfect"></span>
+          <span class="icons icon-arrow-up"></span>
+        </div>
+      </div>
+      <div class="content-box">
+        <div class="left-section">
+          <div class="stat-value-wrapper">
+            <span class="value">{{summary.posAisles.good}}</span>
+            <span class="percentage">25%</span>
+          </div>
+          <div class="stat-label">Good</div>
+        </div>
+        <div class="right-section">
+          <span class="icon-good"></span>
+          <span class="icons icon-arrow-down"></span>
+        </div>
+      </div>
+      <div class="content-box">
+        <div class="left-section">
+          <div class="stat-value-wrapper">
+            <span class="value">{{summary.posAisles.down}}</span>
+            <span class="percentage">25%</span>
+          </div>
+          <div class="stat-label">Down</div>
+        </div>
+        <div class="right-section">
+          <span class="icon-down"></span>
+          <span class="icons icon-arrow-down"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="data-wrapper store-performance">
+    <div class="data-header">
+      <h4>Store Performance</h4>
+      <span class="currency">$</span>
+    </div>
+    <div class="data-sub-header">
+      <div class="stat-label">Sales Number</div>
+      <div class="stat">{{summary.storePerformance.currentSalesNumber}}</div>
+    </div>
+    <div class="data-body">
+      <div class="content-box" *ngFor="let stat of summary.storePerformance.lastThreeHours">
+        <div class="left-section">
+          <div class="stat-value">{{stat.sales}}</div>
+          <div class="stat-label">{{stat.time}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="data-wrapper network-performance">
+    <div class="data-header">
+      <h4>Network Performance</h4>
+      <span class="icons icon-network"></span>
+    </div>
+    <div class="data-sub-header">
+      <div class="stat-label">Total Devices</div>
+      <div class="stat">{{summary.networkPerformance.totalDevices}}</div>
+    </div>
+    <div class="data-body">
+      <div class="content-box">
+        <div class="left-section">
+          <div class="stat-value-wrapper">
+            <span class="value">{{summary.networkPerformance.connected}}</span>
+            <span class="percentage">75%</span>
+          </div>
+          <div class="stat-label">Connected</div>
+        </div>
+        <div class="right-section">
+          <span class="icon-round icon-connected"></span>
+          <span class="icons icon-arrow-up"></span>
+        </div>
+      </div>
+      <div class="content-box">
+        <div class="left-section">
+          <div class="stat-value-wrapper">
+            <span class="value">{{summary.networkPerformance.notConnected}}</span>
+            <span class="percentage">25%</span>
+          </div>
+          <div class="stat-label">Not Connected</div>
+        </div>
+        <div class="right-section">
+          <span class="icon-round icon-not-connected"></span>
+          <span class="icons icon-arrow-down"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- store details button -->
+  <button class="btn btn-primary bg-grey btn-store-details" (click)="showStoreDetails()"><span>Store details ></span></button>
+</div>

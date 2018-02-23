@@ -1,0 +1,54 @@
+$font-primary: Arial, sans-serif;
+
+$desktop-content-min-width: 1260px;
+$default-page-gutter: 50px;
+$default-page-gutter-md: 30px;
+$default-page-gutter-sm: 20px;
+
+$color-theme-primary: #00a2e0;
+
+$color-bg-body: #f8f8f8;
+$color-bg-header: #ffffff;
+$color-bg-footer: #484848;
+$color-bg-search-header-bar: #0e3570;
+
+$header-height-lg: 64px;
+$header-height-sm: 53px;
+$footer-height: 64px;
+$search-header-bar-height-lg: $header-height-lg;
+$search-header-bar-height-sm: $header-height-sm;
+
+$side-nav-width-md: 342px;
+
+$color-text-medium: #282828;
+$color-text-light: #9b9b9b;
+
+$color-text-primary: $color-text-medium;
+$color-text-secondary: $color-text-light;
+
+$color-text-link: $color-theme-primary;
+
+$color-bg-btn-primary: $color-theme-primary;
+$btn-primary-height: 42px;
+$btn-primary-big-height: 55px;
+
+$default-input-height: 42px;
+$color-text-input: $color-text-medium;
+$color-default-input-placeholder: rgba($color-text-input, 0.5);
+
+$store-active: $color-theme-primary;
+$store-issue: #ee3324;
+
+$color-pos-aisles: $color-theme-primary;
+$color-store-performance: #1ee2c9;
+$color-network-performance: #ffa700; 
+
+$add-update-form-width: 489px;
+
+$default-box-shadow: 0px 0px 10px rgba(#000, 0.1);
+
+$breakpoints: (
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1200px
+);

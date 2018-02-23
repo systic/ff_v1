@@ -1,0 +1,28 @@
+@import "~styles/_helpers";
+
+// main footer
+#main-footer {
+  background-color: $color-bg-footer;
+  height: $footer-height;
+  padding: 0 21px;
+  display: flex;
+  align-items: center;
+
+  .copyright-txt {
+    color: #fff;
+    margin-right: auto;
+  }
+
+  .btn-scrolltop {
+    width: 43px;
+    height: 43px;
+    background-color: rgba(#000, 0.15);
+  }
+}
+
+@include respond-to(till-large) {
+
+  #main-footer {
+    display: none;
+  }
+}

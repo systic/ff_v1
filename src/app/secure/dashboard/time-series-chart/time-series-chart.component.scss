@@ -1,0 +1,92 @@
+@import "~styles/_helpers";
+
+// time series chart
+.time-series-chart-container {
+
+  ::ng-deep {
+
+    .carousel-indicators {
+      bottom: -18px;
+    }
+
+    .carousel.slide {
+
+      .carousel-item.active {
+        display: flex;
+
+        .chart-bar {
+          flex-grow: 1;
+          height: 214px;
+          max-width: 43px;
+
+          .x-axis-label {
+            font-size: 12px;
+            line-height: 42px;
+            border-top: 1px solid #e4e4e4;
+          }
+
+          .issue-bar,
+          .active-bar {
+            margin: 5px 0;
+            display: flex;
+            flex-direction: column;
+            
+
+            .value {
+              width: 11px;
+              border-radius: 6px;
+            }
+          }
+
+          .issue-bar {
+            height: 49px;
+            justify-content: flex-start;
+
+            .value {
+              background-color: #ee3324;
+            }
+          }
+
+          .active-bar {
+            margin: 5px 0;
+            height: 102px;
+            justify-content: flex-end;
+
+            .value {
+              background-color: $color-theme-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // date picker
+  .datepicker-row {
+    padding-top: 46px;
+    display: flex;
+    justify-content: center;
+
+    .datepicker-wrapper {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .input-date {
+      width: 100%;
+      position: absolute;
+      top: -5px;
+      left: 0;
+      right: 0;
+      bottom: -5px;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .date-field {
+      padding-left: 11px;
+      font-size: 16px;
+    }
+  }
+}

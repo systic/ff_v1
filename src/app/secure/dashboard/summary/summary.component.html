@@ -1,0 +1,46 @@
+<div class="summary-wrapper" perfectScrollbar [ngClass]="{'is-visible-md' : isVisibleMd}">
+  <div class="btn-slide-down" (click)="isVisibleMd = false"><span class="icons icon-slide-down"></span></div>
+  <h3 class="summary-heading">Summary</h3>
+  <div class="summary-left-section">
+    <div class="content-box total-stores">
+      <div class="stat-label">Total Stores</div>
+      <div class="count">{{totalStores}}</div>
+    </div>
+    <div class="active-issue-stat-wrapper">
+      <div class="content-box active-stores">
+        <div class="left-section">
+          <div class="store-count-wrapper">
+            <span class="count">{{activeStoresCount}}</span>
+            <span class="percentage">{{activePercentage}}%</span>
+          </div>
+          <div class="stat-label">Active Stores</div>
+        </div>
+        <div class="right-section">
+          <span class="store-status-symbol bg-store-active"></span>
+          <span class="icons icon-arrow-up"></span>
+        </div>
+      </div>
+      <div class="content-box issue-stores">
+        <div class="left-section">
+          <div class="store-count-wrapper">
+            <span class="count">{{issueStoresCount}}</span>
+            <span class="percentage">{{issuePercentage}}%</span>
+          </div>
+          <div class="stat-label">Issue Stores</div>
+        </div>
+        <div class="right-section">
+          <span class="store-status-symbol bg-store-issue"></span>
+          <span class="icons icon-arrow-down"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="summary-right-section">
+    <!-- time series chart -->
+    <app-time-series-chart></app-time-series-chart>
+  </div>
+</div>
+
+<!-- drag handle located at the bottom in tablet and mobile -->
+<div class="drag-handle" (click)="isVisibleMd = true"></div>

@@ -1,0 +1,131 @@
+@import "~styles/_helpers";
+
+// page user management
+#page-user-management {
+  min-width: $desktop-content-min-width;
+
+  .page-title-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 21px 0 23px;
+    color: #fffefe;
+
+    .title {
+      font-size: 18px;
+    }
+
+    .total-users {
+      font-size: 16px;
+    }
+  }
+
+  .grid-list-view-container {
+
+    // grid view
+    .in-grid-view {
+  
+      .grid-box {
+        padding: 31px 3.5% 22px 2.65%;
+        display: flex;
+
+        .img-container {
+          width: 61px;
+          height: 61px;
+          background-color: $color-bg-body;
+          border-radius: 50%;
+
+          img {
+            max-height: 85%;
+            max-width: 85%;
+          }
+        }
+
+        .user-details-wrapper {
+          width: 250px;
+          flex-grow: 1;
+          flex-shrink: 1;
+          padding-left: 2.9%;
+
+          .header-row {
+            padding: 1px 0 7px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            ::ng-deep {
+
+              .icon-checkbox {
+                margin-right: 11x;
+              }
+
+              .checkbox-label {
+                font-size: 15px;
+                color: #007ac8;
+              }
+            }
+
+            .user-role {
+              text-transform: uppercase;
+              color: #575757;
+
+              &.is-admin {
+                color: #00bf4c;
+              }
+            }
+          }
+
+          .data-row {
+            padding-left: 28px;
+            margin-bottom: 7px;
+            
+            &.phone-number {
+              display: flex;
+              align-items: center;
+              margin-bottom: 0;
+
+              .icon-phone {
+                margin-right: 6px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // in list view
+    .in-list-view {
+
+      .data-table {
+
+        th,
+        td {
+
+          &:first-child {
+            width: 6.1%;
+            padding: 0;
+          }
+
+          &:nth-child(2) {
+            width: 16.8%;
+            padding-left: 25px;
+          }
+
+          &:nth-child(3) {
+            width: 27.3%;
+          }
+
+          &:nth-child(4) {
+            width: 22.2%;
+          }
+
+          &:nth-child(5) {
+            width: 14%;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+}

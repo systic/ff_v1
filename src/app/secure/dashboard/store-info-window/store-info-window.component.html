@@ -1,0 +1,28 @@
+<!-- store info window on hover over marker -->
+<div class="info-window">
+  <div class="header-row">
+    <div class="store-name is-ellipsis">{{summary.name}}</div>
+    <div class="store-status" [ngClass]="[storeType === 'active' ? 'bg-store-active' : 'bg-store-issue']"></div>
+  </div>
+  <div class="data-row pos-aisles">
+    <div class="stat">{{summary.posAisles.totalDevices}}</div>
+    <div class="stat-label-wrapper">
+      <span class="stat-label">POS AISLED</span>
+      <span class="icons icon-pos-aisles-blue"></span>
+    </div>
+  </div>
+  <div class="data-row store-performance">
+    <div class="stat">{{summary.storePerformance.currentSalesNumber}}</div>
+    <div class="stat-label-wrapper">
+      <span class="stat-label">Store Perform</span>
+      <span class="currency">$</span>
+    </div>
+  </div>
+  <div class="data-row network-performance">
+    <div class="stat">{{summary.networkPerformance.totalDevices}}</div>
+    <div class="stat-label-wrapper">
+      <span class="stat-label">Store Perform</span>
+      <span class="icons icon-network-orange"></span>
+    </div>
+  </div>
+</div>

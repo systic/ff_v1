@@ -1,0 +1,25 @@
+@import "~styles/_helpers";
+
+// adjust modal width depending on screen width
+.modal-body {
+  padding: 15px;
+}
+
+.youtube-iframe {
+  width: 560px;
+  height: 315px;
+}
+
+@include respond-to(only-small) {
+
+  .modal-body {
+    padding: 10px;
+  }
+
+  .youtube-iframe {
+    max-width: 450px;
+    max-height: 215px;
+    width: 85vw;
+    height: 47.8vw;
+  }
+}

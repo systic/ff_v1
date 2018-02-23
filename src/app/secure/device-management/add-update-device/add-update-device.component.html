@@ -1,0 +1,46 @@
+<!-- add or update device form -->
+<div class="add-update-form-wrapper">
+  <div class="header-bar">
+    <h5><span *ngIf="formType === 'add'">+ </span>{{formType === 'add' ? 'Add a new' : 'Update'}} device</h5>
+    <a href="javascript:;" class="btn btn-close" (click)="closeForm()"><span class="icons icon-close-white"></span></a>
+  </div>
+  <!-- just close form on submit for now -->
+  <form class="add-update-form" [formGroup]="deviceForm" novalidate (ngSubmit)="closeForm()">
+    <div class="form-input-group">
+      <div class="form-input-wrapper">
+        <div class="input-label">Device Name</div>
+        <input type="text" class="form-input" placeholder="Enter device name" formControlName="deviceName" />
+      </div>
+      <div class="form-input-wrapper device-type">
+        <div class="input-label">Devicy Type</div>
+        <app-custom-select [options]="deviceTypeOptions" placeholder="Select Device type" formControlName="deviceType"></app-custom-select>
+      </div>
+      <div class="form-input-wrapper">
+        <div class="input-label">Store Name</div>
+        <input type="text" class="form-input" placeholder="Enter store name" formControlName="storeName" />
+      </div>
+      <div class="form-input-wrapper">
+        <div class="input-label">Store ID</div>
+        <input type="text" class="form-input" placeholder="Enter ID" formControlName="storeId" />
+      </div>
+      <div class="form-input-wrapper">
+        <div class="input-label">IP Address</div>
+        <input type="text" class="form-input" placeholder="Enter IP Address" formControlName="ipAddress" />
+      </div>
+      <div class="form-input-wrapper">
+        <div class="input-label">OS</div>
+        <app-custom-select [options]="OSOptions" placeholder="Select" formControlName="OS"></app-custom-select>
+      </div>
+      <div class="form-input-wrapper">
+        <div class="input-label">Description</div>
+        <textarea class="form-textarea" placeholder="Enter descripion" formControlName="description"></textarea>
+      </div>
+    </div>
+
+    <!-- buttons row -->
+    <div class="buttons-row d-flex justify-content-end">
+      <button type="button" class="btn btn-cancel" (click)="closeForm()"><span>Cancel</span></button>
+      <button type="submit" class="btn btn-submit"><span>Submit</span></button>
+    </div>
+  </form>
+</div>

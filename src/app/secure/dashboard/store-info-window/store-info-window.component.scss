@@ -1,0 +1,76 @@
+@import "~styles/_helpers";
+
+// store info window
+.info-window {
+  padding-top: 20px;
+
+  .header-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .store-name {
+      font-size: 16px;
+      width: 105px;
+      font-weight: 700;
+    }
+
+    .store-status {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+  }
+
+  .data-row {
+    margin-bottom: 11px;
+
+    .stat {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .stat-label-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .stat-label {
+        font-size: 12px;
+        line-height: 12px;
+      }
+    }
+
+    &.pos-aisles {
+
+      .stat {
+        color: $color-pos-aisles;
+      }
+    }
+
+    &.store-performance {
+      
+      .stat {
+        color: $color-store-performance;
+      }
+
+      .stat-label-wrapper {
+        align-items: flex-end;
+      }
+
+      .currency {
+        color: $color-store-performance;
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+
+    &.network-performance {
+
+      .stat {
+        color: $color-network-performance;
+      }
+    }
+  }
+}

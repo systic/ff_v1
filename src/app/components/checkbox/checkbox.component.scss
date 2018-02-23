@@ -1,0 +1,67 @@
+@import "~styles/_helpers";
+
+.checkbox {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+
+  &.is-disabled {
+    cursor: default;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  .icon-checkbox {
+    background-image: url("../../../assets/img/icons/icon-checkbox.svg");
+    @include icon(17px, 17px);
+    margin-right: 10px;
+  }
+
+  input[type=checkbox] {
+    display: none;
+  }
+  
+  .checkbox-label {
+    flex-shrink: 1;
+  }
+  
+  input:checked  {
+    
+    & + .icon-checkbox {
+      background-image: url("../../../assets/img/icons/icon-checkbox-checked.svg");
+      @include icon(17px, 17px);
+    }
+  } 
+}
+
+[data-whatintent="touch"],
+[data-whatinput="touch"] {
+
+  .checkbox:hover {
+    opacity: 1;
+  }
+}
+
+
+@include respond-to(only-small) {
+
+  .checkbox {
+
+    .icon-checkbox {
+      @include icon(14.6px, 14.6px);
+      margin-right: 8px;
+    }
+
+    input:checked  {
+      
+      & + .icon-checkbox {
+        @include icon(14.6px, 14.6px);
+      }
+    } 
+  }
+}

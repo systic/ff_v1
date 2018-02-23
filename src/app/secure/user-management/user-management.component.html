@@ -1,0 +1,111 @@
+<!-- page - user management -->
+<div id="page-user-management" *ngIf="(userList | searchFilter: 'name' : searchText) as filteredUserList">
+  <!-- search header bar -->
+  <app-search-header-bar searchPlaceholder="Search Users" [(searchText)]="searchText">
+    <div class="page-title-wrapper">
+      <h4 class="title">User Management</h4>
+      <div class="total-users">{{filteredUserList.length}} users</div>
+    </div>
+  </app-search-header-bar>
+  <div class="grid-list-view-container" [ngClass]="{'has-overlay' : isAddUpdateFormVisible}">
+    <div class="content-wrapper">
+      <div class="action-header-row">
+        <h4 class="data-title">User Management</h4>
+        <a href="javascript:;" class="btn btn-primary bg-grey btn-update" (click)="updateUser()">
+          <span class="icons icon-update"></span>
+          <span>Update User</span>
+        </a>
+        <a href="javascript:;" class="btn btn-primary bg-grey btn-reset-password">
+          <span class="icons icon-reset-password"></span>
+          <span>Reset password</span>
+        </a>
+        <a href="javascript:;" class="btn btn-primary bg-grey btn-deactivate" (click)="deactivateUsers()">
+          <span class="icons icon-deactivate"></span>
+          <span>Deactivate User</span>
+        </a>
+        <a href="javascript:;" class="btn btn-primary btn-add" (click)="addUser()">
+          <span class="icons icon-add"></span>
+          <span>Add User</span>
+        </a>
+        <a href="javascript:;" class="icons icon-grid-view" [ngClass]="{'is-active' : inGridView}" (click)="inGridView = true"></a>
+        <a href="javascript:;" class="icons icon-list-view" [ngClass]="{'is-active' : !inGridView}" (click)="inGridView = false"></a>
+      </div>
+      <ng-container *ngIf="inGridView; then gridView; else listView"></ng-container>
+      <!-- pagination -->
+      <ngb-pagination *ngIf="filteredUserList.length > pageSize" class="pagination-wrapper d-flex justify-content-end"
+        [collectionSize]="filteredUserList.length" [pageSize]="pageSize" [(page)]="currentPage"></ngb-pagination>
+
+      <!-- add update form -->
+      <app-add-update-user *ngIf="isAddUpdateFormVisible" [formType]="formType" [formData]="formData"
+        (hideForm)="isAddUpdateFormVisible = false"></app-add-update-user>
+    </div>
+  </div>
+
+  <!-- grid view -->
+  <ng-template #gridView>
+    <div class="in-grid-view d-flex flex-wrap">
+      <div class="grid-box" *ngFor="let user of filteredUserList | slice:((currentPage-1)*pageSize):((currentPage-1)*pageSize + pageSize)"
+        [ngClass]="{'is-deactivated' : !user.activated}">
+      <div class="img-container align-item-center">
+        <img [src]="user.imgUrl" alt="user">
+      </div>
+      <div class="user-details-wrapper">
+        <div class="header-row">
+          <app-checkbox [(ngModel)]="user.selected" [disabled]="!user.activated">{{user.name}}</app-checkbox>
+          <div class="user-role" [ngClass]="{'is-admin' : user.role === 'admin'}">{{user.role}}</div>
+        </div>
+        <div class="data-row email-address">{{user.email}}</div>
+        <div class="data-row userid">ID: {{user.userId}}</div>
+        <div class="data-row phone-number">
+          <span class="icons icon-phone"></span>
+          <span>{{user.phoneNumber}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </ng-template>
+
+  <!-- list view -->
+  <ng-template #listView>
+    <div class="in-list-view">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th class="align-center">Select</th>
+            <th>
+              <div class="sort-head" (click)="sortList('name')">
+                <span>Name</span>
+                <span class="icons icon-sort" [ngClass]="{'in-ascending' : orderIn === 'ascending', 'is-active' : sortBy === 'name'}"></span>
+              </div>
+            </th>
+            <th>Email Id</th>
+            <th>
+              <div class="sort-head" (click)="sortList('userId')">
+                <span>User Id</span>
+                <span class="icons icon-sort" [ngClass]="{'in-ascending' : orderIn === 'ascending', 'is-active' : sortBy === 'userId'}"></span>
+              </div>
+            </th>
+            <th>
+              <div class="sort-head" (click)="sortList('role')">
+                <span>Role</span>
+                <span class="icons icon-sort" [ngClass]="{'in-ascending' : orderIn === 'ascending', 'is-active' : sortBy === 'role'}"></span>
+              </div>
+            </th>
+            <th>Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of filteredUserList | slice:((currentPage-1)*pageSize):((currentPage-1)*pageSize + pageSize)"
+            [ngClass]="{'is-deactivated' : !user.activated}">
+            <td class="align-center"><app-checkbox [(ngModel)]="user.selected" [disabled]="!user.activated"></app-checkbox></td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.userId}}</td>
+            <td>{{user.role}}</td>
+            <td>{{user.phoneNumber}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+</div>

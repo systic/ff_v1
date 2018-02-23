@@ -1,0 +1,11 @@
+@import "~styles/_helpers";
+
+.page-not-found {
+  min-height: calc(100vh - #{$footer-height});
+}
+
+h1 {
+  font-size: 40px;
+  padding-top: 150px;
+  text-align: center;
+}

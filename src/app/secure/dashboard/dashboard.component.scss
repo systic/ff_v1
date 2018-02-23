@@ -1,0 +1,362 @@
+@import "~styles/_helpers";
+
+// dashboard page
+#page-dashboard {
+
+  // country dropdown
+  .country-dropdown {
+    height: 100%;
+    display: flex;
+
+    .dropdown-toggle {
+      height: 100%;
+      width: 64px;
+      background-color: rgba(#000, 0.15);
+
+      .icon-dropdown-caret {
+        background-image: url("../../../assets/img/icons/icon-scrolltop.svg");
+        @include icon(17px, 9px);
+        transform: rotate(180deg);
+      }
+    }
+
+    &.show {
+
+      .dropdown-toggle {
+        background-color: $color-theme-primary;
+
+        .icon-dropdown-caret {
+          transform: none;
+        }
+      }
+    }
+
+    .selected-option-wrapper {
+      color: #fffefe;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      flex-grow: 1;
+
+      .selected-option {
+        font-size: 18px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+
+        .flag {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          margin-right: 18px;
+        }
+      }
+
+      .total-stores {
+        font-size: 16px;
+      }
+    }
+
+    .dropdown-menu {
+      margin: 0 0 0 64px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      right: 0;
+      height: 448px;
+      overflow: auto;
+      box-shadow: $default-box-shadow;
+
+      li {
+        font-size: 16px;
+        cursor: pointer;
+        padding: 0 21px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 21px;
+          right: 21px;
+          bottom: 0;
+          border-bottom: 1px solid #e4e4e4;
+        }
+
+        &:last-child:before {
+          border-bottom: 0;
+        }
+
+        &:first-child {
+
+          .icon-container {
+            background-color: #fff;
+          }
+        }
+
+        // selected option style
+        &.is-selected {
+          background-color: rgba($color-theme-primary, 0.15);
+
+          &:before {
+            display: none;
+          }
+
+          .icon-tick-blue {
+            display: block;
+          }
+
+          .name {
+            font-weight: 700;
+          }
+        }
+
+        .icon-tick-blue {
+          margin-left: 20px;
+          display: none;
+        }
+
+        > .icon-container,
+        .flag {
+          width: 25px;
+          height: 25px;
+          margin-right: 17px;
+          border-radius: 50%;
+        }
+
+        .name {
+          font-size: 18px;
+        }
+
+        .total-stores {
+          padding: 3px 10px 3px 0;
+          margin-left: auto;
+          min-width: 85px;
+          border-right: 1px solid #e4e4e4;
+        }
+
+        .active-stores,
+        .issue-stores {
+          display: flex;
+          align-items: center;
+          min-width: 64px;
+          padding-left: 21px;
+
+          .store-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 9px;
+          }
+        }
+      }
+    }
+  }
+
+  .main-content {
+    position: relative;
+    display: flex;
+    padding-right: 384px;
+    height: calc(100vh - #{$header-height-lg} - #{$search-header-bar-height-lg} - #{$footer-height});
+
+    // search suggestions dropdown
+    .search-suggestions-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 50%;
+      background-color: #fff;
+      z-index: 30;
+      padding: 0 21px;
+      max-height: 448px;
+      overflow: auto;
+      box-shadow: $default-box-shadow;
+
+      li {
+        font-size: 16px;
+        cursor: pointer;
+        line-height: 64px;
+        border-bottom: 1px solid #e4e4e4;
+      }
+    }
+
+    .map-container {
+      flex-grow: 1;
+      position: relative;
+
+      .store-markers-filter {
+        z-index: 10;
+        position: absolute;
+        top: 27px;
+        right: 43px;
+        display: flex;
+
+        .btn {
+          color: $color-text-primary;
+          background-color: #fff;
+          font-size: 16px;
+          padding: 0 11px;
+          height: 32px;
+          margin-left: 11px;
+
+          .store-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 9px;
+          }
+
+          .count span {
+            font-weight: 400;
+          }
+
+          &.is-active {
+            color: #fff;
+
+            .store-status {
+              background-color: #fff;
+            }
+
+            &.btn-active-stores {
+              background-color: $store-active;
+            }
+
+            &.btn-issue-stores {
+              background-color: $store-issue;
+            }
+          }
+        }
+      }
+
+      agm-map {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+
+@include respond-to(till-large) {
+
+  #page-dashboard {
+    overflow: hidden;
+
+    // country dropdown
+    .country-dropdown {
+
+      .selected-option-wrapper {
+
+        .selected-option {
+          font-size: 16px;
+        }
+
+        .total-stores {
+          display: none;
+        }
+      }
+
+      .dropdown-menu {
+        margin: 0;
+        right: -100%;
+      }
+    }
+
+    .main-content {
+      padding-right: 0;
+      height: calc(100vh - #{$header-height-lg} - #{$search-header-bar-height-lg});
+
+      .map-container {
+
+        agm-map {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+@include respond-to(only-small) {
+
+  #page-dashboard {
+
+    // country dropdown
+    .country-dropdown {
+
+      .selected-option-wrapper {
+        padding: 0;
+
+        .selected-option {
+          font-size: 14px;
+        }
+      }
+
+      .dropdown-toggle {
+        width: 64px;
+        background-color: transparent;
+      }
+
+      &.show {
+
+        .dropdown-toggle {
+          background-color: transparent;
+        }
+      }
+
+      .dropdown-menu {
+        right: -57px;
+
+        li {
+
+          .total-stores {
+            display: none;
+          }
+
+          .active-stores {
+            margin-left: auto;
+          }
+        }
+      }
+    }
+
+    .main-content {
+      height: calc(100vh - #{$header-height-sm} - #{$search-header-bar-height-sm});
+
+      .search-suggestions-wrapper {
+        left: 0;
+        max-height: 300px;
+
+        li {
+          line-height: 50px;
+        }
+      }
+
+      .map-container {
+
+        .store-markers-filter {
+          position: fixed;
+          bottom: 16px;
+          top: auto;
+          left: 0;
+          right: 0;
+
+          .btn {
+            flex-grow: 1;
+            margin: 0;
+            height: 53px;
+            border-radius: 0;
+
+            &:first-child {
+              border-right: 1px solid #e4e4e4;
+            }
+          }
+        }
+      }
+    }
+  }
+}

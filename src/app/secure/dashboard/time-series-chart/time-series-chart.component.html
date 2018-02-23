@@ -1,0 +1,21 @@
+<!-- time series chart -->
+<div class="time-series-chart-container" *ngIf="timeSeriesData">
+  <ngb-carousel interval="false">
+    <ng-template *ngFor="let i of [0, 1, 2, 3]" ngbSlide>
+      <div class="chart-bar" *ngFor="let item of timeSeriesData | slice:(i*7):(i*7 + 7); let j = index">
+        <div class="active-bar"><div class="value" [style.height.%]="item.active*100/activeScale"></div></div>
+        <div class="issue-bar"><div class="value" [style.height.%]="item.issue*100/issueScale"></div></div>
+        <div class="x-axis-label">{{item.time}}</div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  
+  <!-- date picker -->
+  <div class="datepicker-row">
+    <div class="datepicker-wrapper" (click)="d.toggle()">
+      <span class="icons icon-dropdown-caret"></span>
+      <input type="text" readonly [(ngModel)]="selectedDate" class="input-date" ngbDatepicker #d="ngbDatepicker" placement="top-left" />
+      <span class="date-field">{{formatDate() | date:"fullDate"}}</span>
+    </div>
+  </div>
+</div>

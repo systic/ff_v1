@@ -1,0 +1,75 @@
+@import "~styles/_helpers";
+
+// search header bar just below main header
+.search-header-bar {
+  display: flex;
+  height: $search-header-bar-height-lg;
+  background-color: $color-bg-search-header-bar;
+
+  > * {
+    width: 50%;
+  }
+
+  .search-wrapper {
+    border-left: 1px solid rgba(#fff, 0.5);
+    display: flex;
+    align-items: center;
+    padding-right: 23px;
+
+    .input-search {
+      flex-grow: 1;
+      height: 100%;
+      padding: 0 20px;
+      background-color: transparent;
+      font-size: 16px;
+      color: #fff;
+
+      @include input-placeholder(rgba(255, 254, 254, 0.5), 400);
+    }
+  }
+}
+
+
+@include respond-to(only-small) {
+
+  .search-header-bar {
+    height: $search-header-bar-height-sm;
+
+    > * {
+      width: auto;
+    }
+
+    .left-section {
+      flex-grow: 1;
+    }
+
+    .search-wrapper {
+      border-left: 0;
+      padding: 0 24px 0 15px;
+
+      .input-search {
+        display: none;
+      }
+    }
+
+    &.is-search-expanded {
+
+      .left-section {
+        display: none;
+      }
+
+      .search-wrapper {
+        flex-grow: 1;
+
+        .input-search {
+          display: block;
+        }
+
+        .icon-search {
+          background-image: url(../../../assets/img/icons/icon-close-white.svg);
+          @include icon(13px, 13px);
+        }
+      }
+    }
+  }
+}

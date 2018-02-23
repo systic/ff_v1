@@ -1,0 +1,102 @@
+<!-- dashboard page -->
+<div id="page-dashboard" *ngIf="countryStoresList">
+  <app-search-header-bar searchPlaceholder="Search Stores" [(searchText)]="searchText">
+    <div ngbDropdown class="country-dropdown">
+      <button ngbDropdownToggle class="align-item-center"><span class="icon-dropdown-caret"></span></button>
+      <div class="selected-option-wrapper">
+        <div class="selected-option">
+          <img *ngIf="selectedCountryIndex !== -1; let index" [src]="countryStoresList[selectedCountryIndex].flagUrl" alt="flag" class="flag">
+          <div class="selected-country">{{selectedCountryName}}</div>
+        </div>
+        <div class="total-stores">{{activeMarkers.length + issueMarkers.length}} stores</div>
+      </div>
+      <ul ngbDropdownMenu perfectScrollbar>
+        <li (click)="filterStoresOnCountry(-1)" [ngClass]="{'is-selected' : selectedCountryIndex === -1}">
+          <span class="icon-container align-item-center"><span class="icons icon-region"></span></span>
+          <span class="name">North America</span>
+          <span class="icons icon-tick-blue"></span>
+          <span class="total-stores">{{regionStoreCounts.total}} stores</span>
+          <span class="active-stores">
+            <span class="store-status bg-store-active"></span>
+            <span class="count">{{regionStoreCounts.active}}</span>
+          </span>
+          <span class="issue-stores">
+            <span class="store-status bg-store-issue"></span>
+            <span class="count">{{regionStoreCounts.issue}}</span>
+          </span>
+        </li>
+        <li *ngFor="let opt of countryStoresList; let i = index" (click)="filterStoresOnCountry(i)" [ngClass]="{'is-selected' : selectedCountryIndex === i}">
+          <img [src]="opt.flagUrl" class="flag" alt="flag" width="25" height="25" />
+          <span class="name">{{opt.countryName}}</span>
+          <span class="icons icon-tick-blue"></span>
+          <span class="total-stores">{{opt.stores.active.length + opt.stores.issue.length}} stores</span>
+          <span class="active-stores">
+            <span class="store-status bg-store-active"></span>
+            <span class="count">{{opt.stores.active.length}}</span>
+          </span>
+          <span class="issue-stores">
+            <span class="store-status bg-store-issue"></span>
+            <span class="count">{{opt.stores.issue.length}}</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </app-search-header-bar>
+
+  <div class="main-content">
+    <!-- search suggestions once user starts typing in the search box -->
+    <ul class="search-suggestions-wrapper" perfectScrollbar *ngIf="searchText !== ''">
+      <li *ngFor="let item of activeStoresList | searchFilter: 'name' : searchText"
+        (click)="selectSearchSuggestion('active', item.location, item.id)">{{item.name}}</li>
+      <li *ngFor="let item of issueStoresList | searchFilter: 'name' : searchText"
+      (click)="selectSearchSuggestion('issue', item.location, item.id)">{{item.name}}</li>
+    </ul>
+    <div class="map-container">
+      <div class="store-markers-filter">
+        <a href="javascript:;" class="btn btn-active-stores" (click)="setMarkerFilter('active')" [ngClass]="{'is-active' : !issueMarkersVisible}">
+          <span class="store-status bg-store-active"></span>
+          <span class="count">{{activeMarkers.length}} <span>active stores</span></span>
+        </a>
+        <a href="javascript:;" class="btn btn-issue-stores" (click)="setMarkerFilter('issue')" [ngClass]="{'is-active' : !activeMarkersVisible}">
+          <span class="store-status bg-store-issue"></span>
+          <span class="count">{{issueMarkers.length}} <span>issue stores</span></span>
+        </a>
+      </div>
+      <agm-map #myMap
+        (mapReady)=onMapReady($event)
+        [latitude]="mapConfig.latitude" [longitude]="mapConfig.longitude"
+        [zoom]="mapConfig.zoom" [styles]="mapConfig.styles"
+      >
+        <ng-container *ngIf="activeMarkersVisible">
+          <agm-marker *ngFor="let marker of activeMarkers; let i = index" 
+            [latitude]="marker.location[0]" [longitude]="marker.location[1]" [iconUrl]="marker.markerUrl"
+            (mouseOver)="showInfoWindow(infoWindow, marker.id)" (mouseOut)="hideInfoWindow(infoWindow)"
+            (markerClick)="selectStoreOnMap('active', marker.location, marker.id)">
+
+            <agm-info-window #infoWindow>
+              <app-store-info-window *ngIf="hoverStoreSummary" [summary]="hoverStoreSummary" storeType="active"></app-store-info-window>
+            </agm-info-window>
+          </agm-marker>
+        </ng-container>
+        <ng-container *ngIf="issueMarkersVisible">
+          <agm-marker *ngFor="let marker of issueMarkers; let i = index"
+            [latitude]="marker.location[0]" [longitude]="marker.location[1]" [iconUrl]="marker.markerUrl"
+            (mouseOver)="showInfoWindow(infoWindow, marker.id)" (mouseOut)="hideInfoWindow(infoWindow)"
+            (markerClick)="selectStoreOnMap('issue', marker.location, marker.id)">
+            
+            <agm-info-window #infoWindow>
+              <app-store-info-window *ngIf="hoverStoreSummary" [summary]="hoverStoreSummary" storeType="issue"></app-store-info-window>
+            </agm-info-window>
+          </agm-marker>
+        </ng-container>
+      </agm-map>
+    </div>
+    
+    <!-- summary box -->
+    <app-summary [activeStoresCount]="activeMarkers.length" [issueStoresCount]="issueMarkers.length"></app-summary>
+
+    <!-- store summary -->
+    <app-store-summary *ngIf="selectedStoreSummary" [summary]="selectedStoreSummary"
+      (closeStoreBox)="filterStoresOnCountry(selectedCountryIndex)"></app-store-summary>
+  </div>
+</div>

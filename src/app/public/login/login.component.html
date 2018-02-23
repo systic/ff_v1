@@ -1,0 +1,47 @@
+<!-- page login -->
+<div id="page-login">
+  <div class="bg-login"></div>
+  <!-- login header - this could be extracted into its own copmponent if it is present in other public pages -->
+  <header class="login-header">
+    <div class="logo-wrapper">
+      <a href="javascript:;" class="logo">
+        <img src="assets/img/logo.png" alt="logo" />
+      </a>
+    </div>
+
+    <nav class="header-nav">
+      <a href="javascript:;">About the App</a>
+      <a href="javascript:;">Contact Us</a>
+      <a href="javascript:;">FAQs</a>
+    </nav>
+  </header>
+
+  <div class="login-content">
+    <div class="app-info-wrapper">
+      <h3 class="name">Store Devices Health Monitor Application</h3>
+      <p class="description">
+        This Application helps users and admin to monitor the health of the POS (Point of Sales) devices &amp; network devices in the stores across globe.
+      </p>
+      <div class="buttons-row">
+      <a href="javascript:;" class="btn btn-primary bg-transparent" (click)="launchDemoVideo()">Watch Demo</a>
+        <a href="javascript:;" class="btn btn-primary btn-know-more">Know More</a>
+      </div>
+    </div>
+
+    <!-- login form -->
+    <form class="login-form" [formGroup]="loginForm" novalidate (ngSubmit)="login()">
+      <h4 class="form-heading">Placeholder</h4>
+      <div class="login-input-group">
+        <div class="login-input-wrapper">
+          <input type="text" class="login-input" placeholder="Username" formControlName="username" />
+        </div>
+        <div class="login-input-wrapper is-password">
+          <input [type]="passwordVisible ? 'text' : 'password'" class="login-input" placeholder="Password" formControlName="password" />
+          <a href="javascript:;" class="icons icon-toggle-password" (click)="passwordVisible = !passwordVisible"></a>
+        </div>
+      </div>
+      <button type="submit" [disabled]="loggingIn" class="btn btn-primary btn-login"><span>{{ loggingIn ? "Signing In ..." :  "Sign In" }}</span></button>
+      <app-checkbox class="remember-me" formControlName="rememberMe">Remember Me</app-checkbox>
+    </form>
+  </div>
+</div>

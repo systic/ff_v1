@@ -1,0 +1,57 @@
+/* scss mixins */
+
+/* input placeholder styling in different browsers */
+@mixin input-placeholder($color, $font-weight: 400) {
+    &::-webkit-input-placeholder {
+        color: $color;
+        font-weight: $font-weight;
+    }
+    
+    &::-moz-placeholder {
+        color: $color;
+        opacity: 1;
+        font-weight: $font-weight;
+    }
+    
+    &:-ms-input-placeholder {
+        color: $color;
+        font-weight: $font-weight;
+    }
+}
+
+
+/*** mixin for media queries ***/
+@mixin respond-to($size) {
+
+    @if($size == only-small) {
+        @media (max-width: map-get($breakpoints, medium) - 1) {
+            @content;
+        }
+    }
+
+    @if($size == till-large) {
+        @media (max-width: map-get($breakpoints, large)) {
+            @content;
+        }
+    }
+    
+    @if($size == only-medium) {
+        @media (min-width: map-get($breakpoints, medium)) and (max-width: map-get($breakpoints, large)) {
+            @content;
+        }
+    }
+    
+    @if($size == till-x-large) {
+        @media (max-width: map-get($breakpoints, xlarge)) {
+            @content;
+        }
+    }
+}
+
+
+/* icon-generator */
+@mixin icon($width, $height) {
+    width: $width;
+    height: $height;
+    background-size: $width $height;
+}

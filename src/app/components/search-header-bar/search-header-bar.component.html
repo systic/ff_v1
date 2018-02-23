@@ -1,0 +1,10 @@
+<!-- search header bar just below main header -->
+<div class="search-header-bar" [ngClass]="{'is-search-expanded': mobileSearchExpanded}">
+  <div class="left-section">
+    <ng-content></ng-content>
+  </div>
+  <div class="search-wrapper">
+    <input type="search" class="input-search" [ngModel]="searchText" (ngModelChange)="updateSearchText($event)" [placeholder]="searchPlaceholder" />
+    <a href="javascript:;" class="icons icon-search" (click)="mobileSearchExpanded = !mobileSearchExpanded"></a>
+  </div>
+</div>

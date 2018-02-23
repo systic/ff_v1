@@ -1,0 +1,301 @@
+@import "~styles/_helpers";
+
+#page-login {
+  background: url("../../../assets/img/bg-login.png") no-repeat;
+  min-height: calc(100vh - #{$footer-height});
+  background-size: 100% auto;
+  
+  // login header
+  .login-header {
+    display: flex;
+    padding: 0 42px;
+    margin-bottom: 75px;
+
+    .logo-wrapper {
+      width: 106px;
+      height: 96px;
+      display: flex;
+      justify-content: center;
+      padding-top: 13px;
+      border-radius: 0 0 53px 53px;
+      background-color: #fff;
+
+      .logo {
+
+        img {
+          width: 75px;
+        }
+      }
+    }
+
+    .header-nav {
+      display: flex;
+      padding-top: 25px;
+      margin-left: auto;
+
+      a {
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        margin-left: 50px;
+      }
+    }
+  }
+
+  .login-content {
+    padding: 0 11% 192px 9.4%;
+    display: flex;
+    justify-content: space-between;
+
+    .app-info-wrapper {
+      width: 390px;
+      color: #fff;
+
+      .name {
+        font-size: 30px;
+        line-height: 1.5;
+        margin-top: -10px;
+        margin-bottom: 20px;
+      }
+
+      .description {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 32px;
+      }
+
+      .buttons-row {
+        display: flex;
+
+        .btn {
+          width: 149px;
+          margin-right: 22px;
+        }
+      }
+    }
+
+    .login-form {
+      width: 362px;
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 44px 42px 66px;
+      box-shadow: $default-box-shadow;
+
+      .form-heading {
+        font-size: 24px;
+        text-align: center;
+      }
+
+      .login-input-group {
+        padding: 39px 0 21px;
+
+        .login-input-wrapper {
+          margin-top: 10px;
+
+          .login-input {
+            width: 100%;
+            font-size: 16px;
+            border-bottom: 1px solid #e4e4e4;
+            height: 54px;
+            text-align: center;
+          }
+
+          &.is-password {
+            position: relative;
+
+            .login-input {
+              padding: 0 27px;
+            }
+
+            .icon-toggle-password {
+              position: absolute;
+              right: 0;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+
+      .btn-login {
+        width: 100%;
+        margin-bottom: 23px;
+        text-transform: uppercase;
+
+        &:disabled,
+        &:disabled:hover {
+          opacity: 0.5;
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+
+@include respond-to(till-large) {
+
+  #page-login {
+    background-size: auto 425px;
+
+    .login-header {
+      margin-bottom: 26px;
+      padding: 0 21px;
+
+      .logo-wrapper {
+        width: 70px;
+        height: 74px;
+        padding-top: 10px;
+        border-radius: 0 0 35px 35px;
+
+        .logo {
+
+          img {
+            width: 55.5px;
+          }
+        }
+      }
+    }
+
+    .login-content {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 50px 320px;
+      justify-content: flex-start;
+
+      .app-info-wrapper {
+        width: 400px;
+        margin-bottom: 57px;
+
+        .name {
+          font-size: 18px;
+          margin-top: -6px;
+          margin-bottom: 16px;
+        }
+
+        .description {
+          font-size: 12px;
+          margin-bottom: 30px;
+        }
+      }
+
+      .login-form {
+        width: 356px;
+        padding: 44px 41px 69px;
+
+
+        .login-input-group {
+
+          .login-input-wrapper {
+
+            .login-input {
+              font-size: 15px;
+            }
+
+            &.is-password {
+
+              .login-input {
+                padding: 0 25px;
+              }
+            }
+          }
+        }
+
+        .btn-login {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(only-small) {
+
+  #page-login {
+    background-size: auto 255px;
+    background-position: center top;
+
+    .login-header {
+      margin-bottom: 27px;
+      padding: 0 28px;
+
+      .logo-wrapper {
+        width: 70px;
+        height: 78px;
+        padding-top: 14px;
+      }
+
+      .header-nav {
+        display: none;
+      }
+    }
+
+    .login-content {
+      padding: 0 0 100px;
+
+      .app-info-wrapper {
+        width: 310px;
+        margin-bottom: 27px;
+
+        .name {
+          font-size: 15px;
+          margin-top: -4px;
+          margin-bottom: 20px;
+        }
+
+        .description {
+          display: none;
+        }
+
+        .buttons-row {
+          justify-content: center;
+
+          .btn {
+            width: 100px;
+            height: 30px;
+            font-size: 12px;
+            margin: 0 8px;
+          }
+        }
+      }
+
+      .login-form {
+        width: 310px;
+        padding: 37px 36px 57px;
+
+        .form-heading {
+          font-size: 21px;
+        }
+
+        .login-input-group {
+          padding: 33px 0 18px;
+
+          .login-input-wrapper {
+
+            .login-input {
+              font-size: 14px;
+              height: 45px;
+            }
+
+            &.is-password {
+
+              .login-input {
+                padding: 0 23px;
+              }
+            }
+          }
+        }
+
+        .btn-login {
+          font-size: 15px;
+          height: 37px;
+          margin-bottom: 20px;
+        }
+
+        ::ng-deep .checkbox .checkbox-label {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

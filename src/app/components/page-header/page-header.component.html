@@ -1,0 +1,42 @@
+<!-- page header -->
+<header id="main-header">
+  <a href="javascript:;" class="icons icon-toggle-nav" (click)="registerSideNav()"></a>
+  <h3 *ngIf="pageTitle | async; let title" class="page-title">{{title}}</h3>
+  <!-- side nav in tablet and mobile but part of header in desktop -->
+  <aside class="side-nav-wrapper" [ngClass]="{'is-visible' : sideNavVisible}" #sideNav>
+    <a href="javascript:;" class="icons icon-close" (click)="closeSideNav()"></a>
+    <a href="javascript:;" routerLink="/dashboard" class="logo-wrapper">
+      <img src="assets/img/logo.png" alt="logo" />
+      <span class="logo-txt">Placeholder</span>
+    </a>
+    <nav class="header-nav">
+      <ul>
+        <li routerLink="/dashboard" routerLinkActive="is-active" #rla1="routerLinkActive" (click)="sideNavVisible && closeSideNav()">
+          <span class="icon-container"><span class="icons icon-dashboard" [ngClass]="{'active' : rla1.isActive}"></span></span>
+          <span class="txt">Dashboard</span>
+        </li>
+        <ng-container *ngIf="userIsAdmin">
+          <li routerLink="/device-management" routerLinkActive="is-active" #rla2="routerLinkActive" (click)="sideNavVisible && closeSideNav()">
+            <span class="icon-container"><span class="icons icon-device" [ngClass]="{'active' : rla2.isActive}"></span></span>
+            <span class="txt">Device Management</span>
+          </li>
+          <li routerLink="/user-management" routerLinkActive="is-active" #rla3="routerLinkActive" (click)="sideNavVisible && closeSideNav()">
+            <span class="icon-container"><span class="icons icon-user" [ngClass]="{'active' : rla3.isActive}"></span></span>
+            <span class="txt">User Management</span>
+          </li>
+        </ng-container>
+        <li (click)="logout()">
+          <span class="icon-container"><span class="icons icon-logout"></span></span>
+          <span class="txt">Sign Out</span>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="loggedin-user-wrapper">
+    <div class="greeting-txt">Welcome,</div>
+    <div *ngIf="userDetails | async; let details" class="name">{{details.username}}</div>
+  </div>
+  <div class="logout-button-wrapper">
+    <a href="javascript:;" class="btn btn-logout" (click)="logout()"><span class="icons icon-logout"></span></a>
+  </div>
+</header>

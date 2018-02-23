@@ -1,0 +1,33 @@
+{
+  "id": "#ID0265875",
+  "name": "Store Name",
+  "type": "active",
+  "posAisles": {
+    "totalDevices": 4,
+    "perfect": 2,
+    "good": 1,
+    "down": 1
+  },
+  "storePerformance": {
+    "currentSalesNumber": "$125,150",
+    "lastThreeHours": [
+      {
+        "time": "10:00 AM",
+        "sales": "$125,125"
+      },
+      {
+        "time": "09:30 AM",
+        "sales": "$125,100"
+      },
+      {
+        "time": "09:00 AM",
+        "sales": "$125,000"
+      }
+    ]
+  },
+  "networkPerformance": {
+    "totalDevices": 20,
+    "connected": 15,
+    "notConnected": 5 
+  }
+}

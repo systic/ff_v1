@@ -1,0 +1,57 @@
+<!-- store details modal -->
+<div class="modal-header">
+  <h4 class="modal-title">STORE HEALTH</h4>
+  <button class="btn btn-close" (click)="activeModal.close()"><span class="icons icon-close-grey"></span></button>
+</div>
+
+<div class="modal-body">
+  <div class="table-container">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>
+            <div class="sort-head" (click)="sortList('deviceName')">
+              <span>Device Name</span>
+              <span class="icons icon-sort" [ngClass]="{'in-ascending' : orderIn === 'ascending', 'is-active' : sortBy === 'deviceName'}"></span>
+            </div>
+          </th>
+          <th>IP</th>
+          <th>
+            <div class="sort-head" [ngClass]="{'is-active' : sortBy === 'store.name'}" (click)="sortList('health')">
+              <span>Health</span>
+              <span class="icons icon-sort" [ngClass]="{'in-ascending' : orderIn === 'ascending', 'is-active' : sortBy === 'health'}"></span>
+            </div>
+          </th>
+          <th>CPU</th>
+          <th>Memory</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let device of storeDetails | slice:((currentPage-1)*pageSize):((currentPage-1)*pageSize + pageSize)">
+          <td>
+            <div class="d-flex align-items-center">
+              <span class="icon-container align-item-center"><span [className]="'icons icon-'+device.deviceType"></span></span>
+              <span>{{device.deviceName}}</span>
+            </div>
+          </td>
+          <td>{{device.ip}}</td>
+          <td>
+            <div class="d-flex align-items-center">
+              <span class="status-container align-item-center">
+                <span class="health-status" [class.is-perfect]="device.health === 'perfect'"
+                [class.is-good]="device.health === 'good'" [class.is-down]="device.health === 'down'"></span>
+              </span>
+              <span class="store-name">{{device.health}}</span>
+            </div>
+          </td>
+          <td>{{device.cpu}}</td>
+          <td>{{device.memory}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- pagination -->
+  <ngb-pagination *ngIf="storeDetails.length > pageSize" class="pagination-wrapper d-flex justify-content-end"
+    [collectionSize]="storeDetails.length" [pageSize]="pageSize" [(page)]="currentPage"></ngb-pagination>
+  </div>

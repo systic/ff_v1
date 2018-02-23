@@ -1,0 +1,133 @@
+<!-- page - device management -->
+<div id="page-device-management" *ngIf="(deviceList | searchFilter: 'name' : searchText) as filteredDeviceList">
+  <!-- search header bar -->
+  <app-search-header-bar searchPlaceholder="Search Devices" [(searchText)]="searchText">
+    <div class="page-title-wrapper">
+      <h4 class="title">Device Management</h4>
+      <div class="total-devices">{{filteredDeviceList.length}} devices</div>
+    </div>
+  </app-search-header-bar>
+  <div class="grid-list-view-container" [ngClass]="{'has-overlay' : isAddUpdateFormVisible}">
+    <div class="content-wrapper">
+      <div class="action-header-row">
+        <h4 class="data-title">Device Management</h4>
+        <a href="javascript:;" class="btn btn-primary bg-grey btn-update" (click)="updateDevice()">
+          <span class="icons icon-update"></span>
+          <span>Update Device</span>
+        </a>
+        <a href="javascript:;" class="btn btn-primary bg-grey btn-deactivate" (click)="deactivateDevices()">
+          <span class="icons icon-deactivate"></span>
+          <span>Deactivate device</span>
+        </a>
+        <a href="javascript:;" class="btn btn-primary btn-add" (click)="addDevice()">
+          <span class="icons icon-add"></span>
+          <span>Add device</span>
+        </a>
+        <a href="javascript:;" class="icons icon-grid-view" [ngClass]="{'is-active' : inGridView}" (click)="inGridView = true"></a>
+        <a href="javascript:;" class="icons icon-list-view" [ngClass]="{'is-active' : !inGridView}" (click)="inGridView = false"></a>
+      </div>
+      <ng-container *ngIf="inGridView; then gridView; else listView"></ng-container>
+      <!-- pagination -->
+      <ngb-pagination *ngIf="filteredDeviceList.length > pageSize" class="pagination-wrapper d-flex justify-content-end"
+        [collectionSize]="filteredDeviceList.length" [pageSize]="pageSize" [(page)]="currentPage"></ngb-pagination>
+
+      <!-- add update form -->
+      <app-add-update-device *ngIf="isAddUpdateFormVisible" [formType]="formType" [formData]="formData" 
+        (hideForm)="isAddUpdateFormVisible = false"></app-add-update-device>
+    </div>
+  </div>
+
+  <!-- grid view -->
+  <ng-template #gridView>
+    <div class="in-grid-view d-flex flex-wrap">
+      <div class="grid-box" *ngFor="let device of filteredDeviceList | slice:((currentPage-1)*pageSize):((currentPage-1)*pageSize + pageSize)"
+        [ngClass]="{'is-deactivated' : !device.activated}">
+      <div class="img-container align-item-center">
+        <img [src]="device.imgUrl" alt="device">
+      </div>
+      <div class="device-details-wrapper">
+        <div class="header-row">
+          <app-checkbox [(ngModel)]="device.selected" [disabled]="!device.activated">{{device.name}}</app-checkbox>
+        </div>
+        <div class="store-name-wrapper">
+          <span class="store-status" [ngClass]="device.store.status === 'active' ? 'bg-store-active' : 'bg-store-issue'"></span>
+          <span class="store-name">{{device.store.name}}</span>
+        </div>
+        <div class="data-row row-1">
+          <span class="store-id">{{device.store.id}}</span>
+          <span class="ip-address"><span class="data-label">IP : </span>{{device.IP}}</span>
+        </div>
+        <div class="data-row row-2">
+          <span class="operating-system"><span class="data-label">OS : </span>{{device.OS}}</span>
+          <div class="device-type">
+            <span [className]="'icons icon-'+device.type"></span>
+            <span>{{device.type}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </ng-template>
+
+  <!-- list view -->
+  <ng-template #listView>
+    <div class="in-list-view">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th class="align-center">Select</th>
+            <th>
+              <div class="sort-head" (click)="sortList('name')">
+                <span>Device Name</span>
+                <span class="icons icon-sort" [ngClass]="{'in-ascending' : orderIn === 'ascending', 'is-active' : sortBy === 'name'}"></span>
+              </div>
+            </th>
+            <th>
+              <div class="sort-head" [ngClass]="{'is-active' : sortBy === 'store.name'}" (click)="sortList('store.name')">
+                <span>Store Name</span>
+                <span class="icons icon-sort" [ngClass]="{'in-ascending' : orderIn === 'ascending', 'is-active' : sortBy === 'store.name'}"></span>
+              </div>
+            </th>
+            <th>
+              <div class="sort-head" (click)="sortList('store.id')">
+                <span>Store Id</span>
+                <span class="icons icon-sort" [ngClass]="{'in-ascending' : orderIn === 'ascending', 'is-active' : sortBy === 'store.id'}"></span>
+              </div>
+            </th>
+            <th>IP</th>
+            <th>
+              <div class="sort-head" (click)="sortList('OS')">
+                <span>OS</span>
+                <span class="icons icon-sort" [ngClass]="{'in-ascending' : orderIn === 'ascending', 'is-active' : sortBy === 'OS'}"></span>
+              </div>
+            </th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let device of filteredDeviceList | slice:((currentPage-1)*pageSize):((currentPage-1)*pageSize + pageSize)"
+            [ngClass]="{'is-deactivated' : !device.activated}">
+            <td class="align-center"><app-checkbox [(ngModel)]="device.selected" [disabled]="!device.activated"></app-checkbox></td>
+            <td>
+              <div class="d-flex align-items-center">
+                <span class="icon-container align-item-center"><span [className]="'icons icon-'+device.type"></span></span>
+                <span>{{device.name}}</span>
+              </div>
+            </td>
+            <td>
+              <div class="d-flex align-items-center">
+                <span class="store-status" [ngClass]="device.store.status === 'active' ? 'bg-store-active' : 'bg-store-issue'"></span>
+                <span class="store-name">{{device.store.name}}</span>
+              </div>
+            </td>
+            <td>{{device.store.id}}</td>
+            <td>{{device.IP}}</td>
+            <td>{{device.OS}}</td>
+            <td>{{device.description}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+</div>
+

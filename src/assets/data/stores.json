@@ -1,0 +1,375 @@
+
+[
+  {
+    "countryCode": "US",
+    "countryName": "United States",
+    "stores": {
+      "active": [
+        {
+          "id": "#ID0265801",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [46.10974576, -110.65195795]
+        },
+        {
+          "id": "#ID0265802",
+          "name": "HStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [41.55455488, -111.78394614]
+        },
+        {
+          "id": "#ID0265803",
+          "name": "ZStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [32.80363218, -110.96419506]
+        },
+        {
+          "id": "#ID0265804",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [40.42281898, -117.47203992]
+        },
+        {
+          "id": "#ID0265805",
+          "name": "AStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [41.01736698, -107.06598312]
+        },
+        {
+          "id": "#ID0265806",
+          "name": "HStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [38.99298702, -112.58904705]
+        },
+        {
+          "id": "#ID0265807",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [34.33569162, -87.0663788]
+        },
+        {
+          "id": "#ID0265808",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [33.00733342, -85.7466822]
+        },
+        {
+          "id": "#ID0265809",
+          "name": "CStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [35.51565991, -85.3833345]
+        },
+        {
+          "id": "#ID0265810",
+          "name": "AStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [41.67107219, -84.54057629]
+        }
+      ],
+      "issue": [
+        {
+          "id": "#ID0265811",
+          "name": "Store Name",
+          "markerUrl": "assets/img/issue-marker.png",
+          "location": [36.17021965, -118.28549456]
+        },
+        {
+          "id": "#ID0265812",
+          "name": "Store Name",
+          "markerUrl": "assets/img/issue-marker.png",
+          "location": [41.94866041, -115.88930801]
+        },
+        {
+          "id": "#ID0265813",
+          "name": "CStore Name",
+          "markerUrl": "assets/img/issue-marker.png",
+          "location": [35.78862405, -96.49694374]
+        }
+      ]
+    }
+  },
+  {
+    "countryCode": "MX",
+    "countryName": "Mexico",
+    "stores" : {
+      "active": [
+        {
+          "id": "#ID0265814",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [22.75606928, -103.73339119]
+        },
+        {
+          "id": "#ID0265815",
+          "name": "AStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [22.39193129, -109.13371048]
+        },
+        {
+          "id": "#ID0265816",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [22.00983743, -99.72298919]
+        },
+        {
+          "id": "#ID0265817",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [21.7642327, -108.14279025]
+        },
+        {
+          "id": "#ID0265818",
+          "name": "CStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [28.65799518, -103.81751675]
+        },
+        {
+          "id": "#ID0265819",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [27.80691192, -106.27665077]
+        }
+      ],
+      "issue": [
+        {
+          "id": "#ID0265820",
+          "name": "AStore Name",
+          "markerUrl": "assets/img/issue-marker.png",
+          "location": [16.97193356, -104.49748756]
+        },
+        {
+          "id": "#ID0265821",
+          "name": "Store Name",
+          "markerUrl": "assets/img/issue-marker.png",
+          "location": [18.09055321, -100.95820886]
+        }
+      ]
+    }
+  },
+  {
+    "countryCode": "HN",
+    "countryName": "Honduras",
+    "stores": {
+      "active": [
+        {
+          "id": "#ID0265821",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [15.06255208, -86.28393434]
+        },
+        {
+          "id": "#ID0265822",
+          "name": "CStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [15.18004676, -86.99023766]
+        },
+        {
+          "id": "#ID0265823",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [14.56467777, -87.35305627]
+        }
+      ],
+      "issue": [
+        {
+          "id": "#ID0265824",
+          "name": "AStore Name",
+          "markerUrl": "assets/img/issue-marker.png",
+          "location": [14.29367058, -88.09592902]
+        },
+        {
+          "id": "#ID0265825",
+          "name": "Store Name",
+          "markerUrl": "assets/img/issue-marker.png",
+          "location": [15.63836692, -86.91044517]
+        }
+      ]
+    }
+  },
+  {
+    "countryCode": "CU",
+    "countryName": "Cuba",
+    "stores": {
+      "active": [
+        {
+          "id": "#ID0265826",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [22.24303685, -80.83378201]
+        },
+        {
+          "id": "#ID0265827",
+          "name": "CStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [21.81015505, -78.49141019]
+        },
+        {
+          "id": "#ID0265829",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [20.76742601, -77.69656103]
+        }
+      ],
+      "issue": [
+        {
+          "id": "#ID0265830",
+          "name": "AStore Name",
+          "markerUrl": "assets/img/issue-marker.png",
+          "location": [22.88381575, -80.07745907]
+        }
+      ]
+    }
+  },
+  {
+    "countryCode": "GT",
+    "countryName": "Guatemala",
+    "stores": {
+      "active": [
+        {
+          "id": "#ID0265831",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [15.97519529, -90.84307229]
+        },
+        {
+          "id": "#ID0265832",
+          "name": "HStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [15.22765185, -89.00965439]
+        },
+        {
+          "id": "#ID0265833",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [15.71221342, -89.33278935]
+        },
+        {
+          "id": "#ID0265834",
+          "name": "ZStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [15.91736886, -90.95175322]
+        },
+        {
+          "id": "#ID0265835",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [17.03610675, -89.99391237]
+        }
+      ],
+      "issue": []
+    }
+  },
+  {
+    "countryCode": "CA",
+    "countryName": "Canada",
+    "stores": {
+      "active": [
+        {
+          "id": "#ID0265836",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [60.1630434, -103.86776537]
+        },
+        {
+          "id": "#ID0265837",
+          "name": "HStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [57.75141533, -93.81529335]
+        },
+        {
+          "id": "#ID0265838",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [50.42480939, -101.65041001]
+        },
+        {
+          "id": "#ID0265839",
+          "name": "ZStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [58.34397529, -105.68944686]
+        },
+        {
+          "id": "#ID0265840",
+          "name": "HStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [51.42147768, -107.78228407]
+        },
+        {
+          "id": "#ID0265841",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [60.94835887, -109.12229454]
+        }
+      ],
+      "issue": [
+        {
+          "id": "#ID0265842",
+          "name": "Store Name",
+          "markerUrl": "assets/img/issue-marker.png",
+          "location": [49.71738415, -102.75686501]
+        },
+        {
+          "id": "#ID0265843",
+          "name": "Store Name",
+          "markerUrl": "assets/img/issue-marker.png",
+          "location": [56.66969464, -101.24172782]
+        },
+        {
+          "id": "#ID0265844",
+          "name": "HStore Name",
+          "markerUrl": "assets/img/issue-marker.png",
+          "location": [50.38242731, -109.75052511]
+        },
+        {
+          "id": "#ID0265845",
+          "name": "Store Name",
+          "markerUrl": "assets/img/issue-marker.png",
+          "location": [59.14820075, -105.65368678]
+        }
+      ]
+    }
+  },
+  {
+    "countryCode": "CR",
+    "countryName": "Costa Rica",
+    "stores": {
+      "active": [
+        {
+          "id": "#ID0265846",
+          "name": "ZStore Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [10.14311251, -83.42392667]
+        },
+        {
+          "id": "#ID0265847",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [9.30128893, -83.82749744]
+        },
+        {
+          "id": "#ID0265848",
+          "name": "Store Name",
+          "markerUrl": "assets/img/active-marker.png",
+          "location": [9.65923089, -83.05845912]
+        }
+      ],
+      "issue": []
+    }
+  },
+  {
+    "countryCode": "JM",
+    "countryName": "Jamaica",
+    "stores": {
+      "active": [],
+      "issue": []
+    }
+  },
+  {
+    "countryCode": "PA",
+    "countryName": "Panama",
+    "stores": {
+      "active": [],
+      "issue": []
+    }
+  }
+]

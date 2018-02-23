@@ -1,0 +1,210 @@
+/* common icons */
+$icons-URL: './assets/img/icons';
+
+.icons {
+	display: block;
+
+	&.icon-scrolltop {
+		background-image: url(#{$icons-URL}/icon-scrolltop.svg);
+		@include icon(17px, 9px);
+	}
+
+	&.icon-toggle-password {
+		background-image: url(#{$icons-URL}/icon-toggle-password.svg);
+		@include icon(17px, 12px);
+
+		@include respond-to(till-large) {
+			@include icon(13px, 8.5px);
+		}
+
+		@include respond-to(only-small) {
+			@include icon(11.4px, 7.3px);
+		}
+	}
+
+	&.icon-logout {
+		background-image: url(#{$icons-URL}/icon-logout.svg);
+		@include icon(19px, 17px);
+	}
+
+	&.icon-toggle-nav {
+		background-image: url(#{$icons-URL}/icon-toggle-nav.svg);
+		@include icon(17px, 13px);
+	}
+
+	&.icon-dashboard {
+		background-image: url(#{$icons-URL}/icon-dashboard.svg);
+
+		&.active {
+			background-image: url(#{$icons-URL}/icon-dashboard-active.svg);
+		}
+		@include icon(14px, 13px);
+
+		@include respond-to(till-large) {
+			@include icon(19px, 17px);
+		}
+	}
+
+	&.icon-arrow-up {
+		background-image: url(#{$icons-URL}/icon-arrow.svg);
+		@include icon(10px, 13px);
+	}
+
+	&.icon-arrow-down {
+		background-image: url(#{$icons-URL}/icon-arrow.svg);
+		@include icon(10px, 13px);
+		transform: rotate(180deg);
+	}
+
+	&.icon-device {
+		background-image: url(#{$icons-URL}/icon-device.svg);
+
+		&.active {
+			background-image: url(#{$icons-URL}/icon-device-active.svg);
+		}
+		@include icon(13px, 13px);
+
+		@include respond-to(till-large) {
+			@include icon(17.5px, 17.5px);
+		}
+	}
+
+	&.icon-user {
+		background-image: url(#{$icons-URL}/icon-user.svg);
+
+		&.active {
+			background-image: url(#{$icons-URL}/icon-user-active.svg);
+		}
+		@include icon(12px, 13px);
+
+		@include respond-to(till-large) {
+			@include icon(16px, 17px);
+		}
+	}
+
+	&.icon-close {
+		background-image: url(#{$icons-URL}/icon-close.svg);
+		@include icon(13px, 13px);
+	}
+
+	&.icon-search {
+		background-image: url(#{$icons-URL}/icon-search.svg);
+		@include icon(18px, 18px);
+	}
+
+	&.icon-region {
+		background-image: url(#{$icons-URL}/icon-region.svg);
+		@include icon(17px, 17px);
+	}
+
+	&.icon-tick-blue {
+		background-image: url(#{$icons-URL}/icon-tick-blue.svg);
+		@include icon(13px, 10px);
+	}
+
+	&.icon-list-view {
+		background-image: url(#{$icons-URL}/icon-list-view.svg);
+
+		&.is-active {
+			background-image: url(#{$icons-URL}/icon-list-view-active.svg);
+		}
+		@include icon(19px, 19px);
+	}
+
+	&.icon-grid-view {
+		background-image: url(#{$icons-URL}/icon-grid-view.svg);
+
+		&.is-active {
+			background-image: url(#{$icons-URL}/icon-grid-view-active.svg);
+		}
+		@include icon(19px, 19px);
+	}
+
+	&.icon-update {
+		background-image: url(#{$icons-URL}/icon-update.svg);
+		@include icon(13px, 13px);
+	}
+
+	&.icon-deactivate {
+		background-image: url(#{$icons-URL}/icon-deactivate.svg);
+		@include icon(13px, 15px);
+	}
+
+	&.icon-reset-password {
+		background-image: url(#{$icons-URL}/icon-reset-password.svg);
+		@include icon(14px, 17px);
+	}
+
+	&.icon-add {
+		background-image: url(#{$icons-URL}/icon-add.svg);
+		@include icon(17px, 17px);
+	}
+
+	&.icon-pos {
+		background-image: url(#{$icons-URL}/icon-pos.svg);
+		@include icon(7px, 11px);
+	}
+
+	&.icon-router {
+		background-image: url(#{$icons-URL}/icon-router.svg);
+		@include icon(12px, 12px);
+	}
+	
+	&.icon-close-white {
+		background-image: url(#{$icons-URL}/icon-close-white.svg);
+		@include icon(10px, 10px);
+	}
+
+	&.icon-sort {
+		background-image: url(#{$icons-URL}/icon-sort.svg);
+
+		&.is-active {
+			background-image: url(#{$icons-URL}/icon-sort-active.svg);
+
+			&.in-ascending {
+				transform: rotate(180deg);
+			}
+		}
+		@include icon(8px, 5px);
+	}
+
+	&.icon-dropdown-caret {
+		background-image: url(#{$icons-URL}/icon-dropdown-caret.svg);
+		@include icon(10px, 6px);
+	}
+
+	&.icon-phone {
+		background-image: url(#{$icons-URL}/icon-phone.svg);
+		@include icon(10px, 10px);
+	}
+
+	&.icon-pos-aisles {
+		background-image: url(#{$icons-URL}/icon-pos-aisles.svg);
+		@include icon(17px, 13px);
+	}
+
+	&.icon-network {
+		background-image: url(#{$icons-URL}/icon-network.svg);
+		@include icon(15px, 15px);
+	}
+
+	&.icon-pos-aisles-blue {
+		background-image: url(#{$icons-URL}/icon-pos-aisles-blue.svg);
+		@include icon(13px, 11px);
+	}
+
+	&.icon-network-orange {
+		background-image: url(#{$icons-URL}/icon-network-orange.svg);
+		@include icon(12px, 11px);
+	}
+
+	&.icon-close-grey {
+		background-image: url(#{$icons-URL}/icon-close-grey.svg);
+		@include icon(10px, 10px);
+	}
+
+	&.icon-slide-down {
+		background-image: url(#{$icons-URL}/icon-slide-down.svg);
+		@include icon(45px, 11px);
+	}
+}

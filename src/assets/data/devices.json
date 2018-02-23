@@ -1,0 +1,977 @@
+[
+  {
+    "name": "ADevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID1347249",
+      "name": "VName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 7",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "FDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID7565875",
+      "name": "GName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 8",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "GADevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID5265815",
+      "name": "SName of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Ubuntu",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "TDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0575845",
+      "name": "Name of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Ubuntu",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID7265375",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "WDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "EName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Ubuntu",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "SName of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 8",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "ADevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "AName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Ubuntu",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "TDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "AName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "MacOS",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "WDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID1347249",
+      "name": "Name of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 8",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "ADevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "AName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Ubuntu",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "TDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID1347249",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 8",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "MacOS",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "ADevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 8",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "ADevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "WDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID1947249",
+      "name": "AName of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Ubuntu",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "RDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "TDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 8",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "ADevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID1947249",
+      "name": "Name of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "RDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "AName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "GDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Ubuntu",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "SDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID1947249",
+      "name": "CName of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 8",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "GDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "RDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "JDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "GDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "SDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "CName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 8",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "GDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID1947249",
+      "name": "Name of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Ubuntu",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "SDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "CName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 8",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "GDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID7947249",
+      "name": "Name of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 8",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "JDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "CName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "FDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID7947249",
+      "name": "Name of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Ubuntu",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "CName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 8",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "FDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID7947249",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "FDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 7",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "JDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "FDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID7947249",
+      "name": "CName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "MacOS",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "QDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 7",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "RName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "XDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0947249",
+      "name": "RName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "XDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "XDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "RName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 7",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0947249",
+      "name": "RName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "QDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "MacOS",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "XDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 7",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "WDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "RName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "QDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0947249",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "CDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 7",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "UName of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "MacOS",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "CDevice 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0943244",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "BName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 7",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "CDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "issue"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0943244",
+      "name": "BName of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device2.png",
+    "type": "router",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 7",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "CDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "MacOS",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "Device 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0265875",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  },
+  {
+    "name": "CDevice 023584GH",
+    "imgUrl": "assets/img/device1.png",
+    "type": "pos",
+    "store": {
+      "id": "#ID0943244",
+      "name": "Name of the Store",
+      "status": "active"
+    },
+    "IP": "10.165.35.625",
+    "OS": "Windows 10",
+    "description": "This store is lorem ipsum dolor sitamet."
+  }
+]

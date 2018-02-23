@@ -1,0 +1,41 @@
+<!-- add or update user form -->
+<div class="add-update-form-wrapper">
+  <div class="header-bar">
+    <h5><span *ngIf="formType === 'add'">+ </span>{{formType === 'add' ? 'Add a new' : 'Update'}} user</h5>
+    <a href="javascript:;" class="btn btn-close" (click)="closeForm()"><span class="icons icon-close-white"></span></a>
+  </div>
+  <!-- just close form on submit for now -->
+  <form class="add-update-form" [formGroup]="userForm" novalidate (ngSubmit)="closeForm()">
+    <div class="form-input-group">
+      <div class="form-input-wrapper">
+        <div class="input-label">Upload Profile Picture</div>
+        <div class="image-upload-wrapper align-item-center" [ngClass]="{'is-uploaded' : uploadedImage}">
+          <input type="file" accept="image/*" (change)="onFileChange($event)" />
+          <img [src]="uploadedImage ? uploadedImage : 'assets/img/placeholder-profile-pic.png'" alt="profile pic" />
+        </div>
+      </div>
+      <div class="form-input-wrapper">
+        <div class="input-label">Name</div>
+        <input type="text" class="form-input" placeholder="Enter name" formControlName="name" />
+      </div>
+      <div class="form-input-wrapper">
+        <div class="input-label">Email ID</div>
+        <input type="text" class="form-input" placeholder="Enter email ID" formControlName="email" />
+      </div>
+      <div class="form-input-wrapper role-dropdown">
+        <div class="input-label">Role</div>
+        <app-custom-select [options]="roleOptions" placeholder="Select" formControlName="role"></app-custom-select>
+      </div>
+      <div class="form-input-wrapper">
+        <div class="input-label">Phone Number</div>
+        <input type="text" class="form-input" placeholder="Enter phone number" formControlName="phoneNumber" />
+      </div>
+    </div>
+
+    <!-- buttons row -->
+    <div class="buttons-row d-flex justify-content-end">
+      <button type="button" class="btn btn-cancel" (click)="closeForm()"><span>Cancel</span></button>
+      <button type="submit" class="btn btn-submit"><span>Submit</span></button>
+    </div>
+  </form>
+</div>

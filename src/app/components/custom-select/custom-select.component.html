@@ -1,0 +1,11 @@
+<!-- custom select dropdown -->
+<div class="dropdown-wrapper" ngbDropdown [placement]="placement">
+  <div ngbDropdownToggle>
+    <span class="is-ellipsis">{{selectedOptions || placeholder}}</span>
+    <span class="icons icon-dropdown-caret"></span>
+  </div>
+  <ul ngbDropdownMenu>
+    <li *ngFor="let option of options; let i = index" (click)="updateSelections(i)"
+      [ngClass]="{'is-selected' : option.selected }">{{option.text}}</li>
+  </ul>
+</div>

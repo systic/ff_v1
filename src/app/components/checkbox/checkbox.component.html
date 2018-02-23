@@ -1,0 +1,5 @@
+<label class="checkbox" [ngClass]="{'is-disabled': disabled}">
+  <input type="checkbox" [checked]="value" (change)="value = !value" [disabled]="disabled" />
+  <span class="icon-checkbox"></span>
+  <span class="checkbox-label"><ng-content></ng-content></span>
+</label>

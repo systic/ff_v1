@@ -1,0 +1,169 @@
+@import "~styles/_helpers";
+
+// summary box
+.summary-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 384px;
+  overflow: auto;
+  background-color: #fff;
+  padding: 15px 42px 30px;
+  z-index: 10;
+
+  .btn-slide-down {
+    display: none;
+  }
+
+  .summary-heading {
+    line-height: 70px;
+    font-size: 24px;
+    border-bottom: 1px solid #e4e4e4;
+    margin-bottom: 21px;
+  }
+
+  .content-box {
+    background-color: $color-bg-body;
+    border-radius: 4px;
+  }
+
+  .total-stores {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding: 10px 21px;
+    font-size: 16px;
+    margin-bottom: 21px;
+
+    .count {
+      font-size: 30px;
+      font-weight: 700;
+    }
+  }
+
+  .active-issue-stat-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .content-box {
+      width: 139px;
+      height: 85px;
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 19px;
+
+      .left-section,
+      .right-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .right-section {
+        padding-bottom: 2px;
+      }
+
+      .store-count-wrapper {
+
+        .count {
+          font-size: 24px;
+          font-weight: 700;
+        }
+
+        .percentage {
+          color: #838383;
+        }
+      }
+
+      .store-status-symbol {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.drag-handle {
+  display: none;
+}
+
+@include respond-to(till-large) {
+
+  .summary-wrapper {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    transform: translateY(100%);
+
+    .btn-slide-down {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 26px;
+      padding-top: 15px;
+      display: flex;
+      justify-content: center;
+    }
+
+    &.is-visible-md {
+      transform: none;
+    }
+  }
+
+  .drag-handle {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 16px;
+    background-color: #484848;
+    z-index: 5;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 6px;
+      height: 3px;
+      width: 128px;
+      border-radius: 2px;
+      background-color: #fff;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+
+@include respond-to(only-medium) {
+
+  .summary-wrapper {
+    top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+
+    .summary-heading {
+      width: 100%;
+    }
+
+    .summary-left-section,
+    .summary-right-section {
+      width: 50%;
+    }
+
+    .summary-left-section {
+      padding-right: 42px;
+      border-right: 1px solid #e4e4e4;
+    }
+
+    .summary-right-section {
+      padding-left: 43px;
+    }
+  }
+}
