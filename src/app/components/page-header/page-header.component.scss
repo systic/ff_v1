@@ -31,10 +31,8 @@
         width: 75px;
       }
 
-      .logo-txt {
-        color: $color-text-primary;
-        font-size: 24px;
-        font-weight: 700;
+      .vf-logo {
+        width: 60px;
         margin-left: 10px;
       }
     }
@@ -159,6 +157,10 @@
 
         img {
           width: 56px;
+        }
+
+        .vf-logo {
+          width: 45px;
         }
       }
 

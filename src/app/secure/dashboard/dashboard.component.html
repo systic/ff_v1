@@ -70,10 +70,10 @@
         <ng-container *ngIf="activeMarkersVisible">
           <agm-marker *ngFor="let marker of activeMarkers; let i = index" 
             [latitude]="marker.location[0]" [longitude]="marker.location[1]" [iconUrl]="marker.markerUrl"
-            (mouseOver)="showInfoWindow(infoWindow, marker.id)" (mouseOut)="hideInfoWindow(infoWindow)"
+            (mouseOver)="showInfoWindow(marker.id)" (mouseOut)="infoWindowOpenId = 'closed'"
             (markerClick)="selectStoreOnMap('active', marker.location, marker.id)">
 
-            <agm-info-window #infoWindow>
+            <agm-info-window [isOpen]="infoWindowOpenId === marker.id">
               <app-store-info-window *ngIf="hoverStoreSummary" [summary]="hoverStoreSummary" storeType="active"></app-store-info-window>
             </agm-info-window>
           </agm-marker>
@@ -81,10 +81,10 @@
         <ng-container *ngIf="issueMarkersVisible">
           <agm-marker *ngFor="let marker of issueMarkers; let i = index"
             [latitude]="marker.location[0]" [longitude]="marker.location[1]" [iconUrl]="marker.markerUrl"
-            (mouseOver)="showInfoWindow(infoWindow, marker.id)" (mouseOut)="hideInfoWindow(infoWindow)"
+            (mouseOver)="showInfoWindow(marker.id)" (mouseOut)="infoWindowOpenId = 'closed'"
             (markerClick)="selectStoreOnMap('issue', marker.location, marker.id)">
             
-            <agm-info-window #infoWindow>
+            <agm-info-window [isOpen]="infoWindowOpenId === marker.id">
               <app-store-info-window *ngIf="hoverStoreSummary" [summary]="hoverStoreSummary" storeType="issue"></app-store-info-window>
             </agm-info-window>
           </agm-marker>

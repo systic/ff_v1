@@ -49,6 +49,8 @@ export class DashboardComponent implements OnInit {
 
   hoverStoreSummary: any;
   selectedStoreSummary: any;
+  // value is closed when no infowindow is visible
+  infoWindowOpenId = 'closed';
 
   searchText = '';
 
@@ -211,17 +213,6 @@ export class DashboardComponent implements OnInit {
     this.mapConfig = DefaultMapConfig;
   }
 
-  /**
-   * fetch and populate the hoverStoreSummary object when user hovers over a marker
-   * @param {string} id storeId of the store to be fetched for
-   */
-  populateHoverStoreSummary(id: string) {
-    this.hoverStoreSummary = false;
-    this.storesService.getStoreSummary(id)
-      .subscribe( response => {
-        this.hoverStoreSummary = response;
-    });
-  }
 
   /**
    * fetch and populate the selectedStoreSummary object when user clicks on a marker
@@ -291,18 +282,26 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  // show info window when hover over a marker
-  showInfoWindow(infoWindow, storeId) {
-    // populate store summary with storeId
-    this.populateHoverStoreSummary(storeId);
-    infoWindow.open();
+  /**
+   * fetch and populate the hoverStoreSummary object when user hovers over a marker
+   * and assign infoWindowOpenId so that the infowindow for a storeId is visible
+   * @param {string} storeId id of the store to be fetched for and infoWindow shown
+   */
+  showInfoWindow(storeId) {
+    this.storesService.getStoreSummary(storeId)
+      .subscribe( response => {
+        this.hoverStoreSummary = response;
+        this.infoWindowOpenId = storeId;
+    });
   }
 
-  // hide info window when hover out of a marker
-  hideInfoWindow(infoWindow) {
-    infoWindow.close();
-  }
 
+  /**
+   * select store from search suggestions and show it on the map as selected
+   * @param {string} type          type of store active or issue
+   * @param {[type]} storeLocation store location in latlng
+   * @param {[type]} storeId       storeId of the store selected
+   */
   selectSearchSuggestion(type: string, storeLocation, storeId) {
     this.selectStoreOnMap(type, storeLocation, storeId);
     this.searchText = '';
