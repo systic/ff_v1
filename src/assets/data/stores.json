@@ -339,18 +339,6 @@
           "name": "ZStore Name",
           "markerUrl": "assets/img/active-marker.png",
           "location": [10.14311251, -83.42392667]
-        },
-        {
-          "id": "#ID0265847",
-          "name": "Store Name",
-          "markerUrl": "assets/img/active-marker.png",
-          "location": [9.30128893, -83.82749744]
-        },
-        {
-          "id": "#ID0265848",
-          "name": "Store Name",
-          "markerUrl": "assets/img/active-marker.png",
-          "location": [9.65923089, -83.05845912]
         }
       ],
       "issue": []

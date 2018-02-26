@@ -1,7 +1,7 @@
 <!-- page - user management -->
 <div id="page-user-management" *ngIf="(userList | searchFilter: 'name' : searchText) as filteredUserList">
   <!-- search header bar -->
-  <app-search-header-bar searchPlaceholder="Search Users" [(searchText)]="searchText">
+  <app-search-header-bar searchPlaceholder="Search Users" [(searchText)]="searchText" [searchDisabled]="isAddUpdateFormVisible">
     <div class="page-title-wrapper">
       <h4 class="title">User Management</h4>
       <div class="total-users">{{filteredUserList.length}} users</div>

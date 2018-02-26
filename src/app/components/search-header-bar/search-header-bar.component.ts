@@ -9,6 +9,7 @@ export class SearchHeaderBarComponent implements OnInit {
 
   @Input() searchPlaceholder: string;
   @Input() searchText: string;
+  @Input() searchDisabled?: boolean;
   @Output() searchTextChange: EventEmitter<string> = new EventEmitter();
 
   mobileSearchExpanded = false;

@@ -46,9 +46,9 @@
   <div class="main-content">
     <!-- search suggestions once user starts typing in the search box -->
     <ul class="search-suggestions-wrapper" perfectScrollbar *ngIf="searchText !== ''">
-      <li *ngFor="let item of activeStoresList | searchFilter: 'name' : searchText"
+      <li *ngFor="let item of activeMarkers | searchFilter: 'name' : searchText"
         (click)="selectSearchSuggestion('active', item.location, item.id)">{{item.name}}</li>
-      <li *ngFor="let item of issueStoresList | searchFilter: 'name' : searchText"
+      <li *ngFor="let item of issueMarkers | searchFilter: 'name' : searchText"
       (click)="selectSearchSuggestion('issue', item.location, item.id)">{{item.name}}</li>
     </ul>
     <div class="map-container">
@@ -62,11 +62,7 @@
           <span class="count">{{issueMarkers.length}} <span>issue stores</span></span>
         </a>
       </div>
-      <agm-map #myMap
-        (mapReady)=onMapReady($event)
-        [latitude]="mapConfig.latitude" [longitude]="mapConfig.longitude"
-        [zoom]="mapConfig.zoom" [styles]="mapConfig.styles"
-      >
+      <agm-map (mapReady)=onMapReady($event)>
         <ng-container *ngIf="activeMarkersVisible">
           <agm-marker *ngFor="let marker of activeMarkers; let i = index" 
             [latitude]="marker.location[0]" [longitude]="marker.location[1]" [iconUrl]="marker.markerUrl"

@@ -21,8 +21,8 @@ export class DashboardComponent implements OnInit {
 
   @ViewChild('myMap') myMap: any;
 
-  // map settings
-  mapConfig: any;
+  // map reference
+  mapRef: any;
 
   // stores list - country wise to be fetched from api
   countryStoresList: any;
@@ -54,6 +54,12 @@ export class DashboardComponent implements OnInit {
 
   searchText = '';
 
+  @HostListener('document: click', ['$event']) clickedOutside($event) {
+    if (this.searchText !== '') {
+      this.searchText = '';
+    }
+  }
+
   constructor(
     private mapsApiLoader: MapsAPILoader,
     private pageTitleService: PageTitleService,
@@ -61,10 +67,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.pageTitleService.pageTitle.next('Dashboard');
-
-    // initial map settings
-    this.mapConfig = DefaultMapConfig;
-
 
     // get full country wise store list
     this.storesService.getStores()
@@ -115,6 +117,10 @@ export class DashboardComponent implements OnInit {
       },
       styles: DefaultMapStyles.styles
     });
+
+    this.mapRef = map;
+
+    this.setMapBoundsAndCenter();
   }
 
   /**
@@ -188,6 +194,50 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+
+  /**
+   * sets the maps zoom such that all markers are just visible
+   * and also sets the center of the map
+   */
+  setMapBoundsAndCenter() {
+
+    const totalMarkers = [...this.issueMarkers , ...this.activeMarkers];
+
+    const bounds = new google.maps.LatLngBounds();
+    totalMarkers.forEach( marker => {
+      bounds.extend(new google.maps.LatLng(marker.location[0], marker.location[1]));
+    });
+
+    // add some padding so that markers are not at the edge
+    let boundsPadding = 0.1;
+
+    // increase the paddding if there is just one marker so that the maps zooom should not be too deep
+    if (totalMarkers.length === 1) {
+      boundsPadding = 1;
+    }
+
+    // add the padding in the bounds
+    const extendPoint1 = new google.maps.LatLng(bounds.getNorthEast().lat() + boundsPadding, bounds.getNorthEast().lng() + boundsPadding);
+    const extendPoint2 = new google.maps.LatLng(bounds.getNorthEast().lat() - boundsPadding, bounds.getNorthEast().lng() - boundsPadding);
+    bounds.extend(extendPoint1);
+    bounds.extend(extendPoint2);
+
+    this.mapRef.fitBounds(bounds, 0);
+
+
+    // set the center according to the selected region
+    this.mapsApiLoader.load().then(() => {
+      const geoCoder = new google.maps.Geocoder();
+      geoCoder.geocode({ 'address': this.selectedCountryName }, (results, status) => {
+        if (status === 'OK') {
+          if (totalMarkers.length === 0) {
+            this.mapRef.setCenter(results[0].geometry.location);
+          }
+        }
+      });
+    });
+  }
+
   /**
    * filter the stores on the country selected ftom the dropdown and update marker arrays
    * @param {number} index of the country selected
@@ -209,8 +259,8 @@ export class DashboardComponent implements OnInit {
     // update the marker arrays
     this.updateMarkerArrays(index);
 
-    // reset map settings
-    this.mapConfig = DefaultMapConfig;
+    // set map bounds
+    this.setMapBoundsAndCenter();
   }
 
 
@@ -245,11 +295,8 @@ export class DashboardComponent implements OnInit {
       geoCoder.geocode({ 'location': latlng }, (results, status) => {
         if (status === 'OK') {
           this.selectedCountryName = results.slice(-2)[0].formatted_address;
-          this.mapConfig = {
-            zoom: 5,
-            latitude: storeLocation[0],
-            longitude: storeLocation[1]
-          };
+          this.mapRef.setZoom(6);
+          this.mapRef.setCenter(new google.maps.LatLng(storeLocation[0], storeLocation[1]));
 
           // update selected country index
           const countryCode = results.slice(-1)[0].address_components[0].short_name;
@@ -304,7 +351,6 @@ export class DashboardComponent implements OnInit {
    */
   selectSearchSuggestion(type: string, storeLocation, storeId) {
     this.selectStoreOnMap(type, storeLocation, storeId);
-    this.searchText = '';
   }
 
 }
