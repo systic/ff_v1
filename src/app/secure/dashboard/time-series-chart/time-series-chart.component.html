@@ -1,8 +1,9 @@
 <!-- time series chart -->
 <div class="time-series-chart-container" *ngIf="timeSeriesData">
-  <ngb-carousel interval="false">
-    <ng-template *ngFor="let i of [0, 1, 2, 3]" ngbSlide>
-      <div class="chart-bar" *ngFor="let item of timeSeriesData | slice:(i*7):(i*7 + 7); let j = index">
+  <ngb-carousel interval="false" [activeId]="activeSlideIndex">
+    <ng-template *ngFor="let i of slideIndexArray" ngbSlide [id]="i">
+      <div class="chart-bar" *ngFor="let item of timeSeriesData | slice:(i*barsPerSlide):(i*barsPerSlide + barsPerSlide); index as j"
+        [ngClass]="{'is-current-time-bar' : (currentHour % barsPerSlide) === j}">
         <div class="active-bar"><div class="value" [style.height.%]="item.active*100/activeScale"></div></div>
         <div class="issue-bar"><div class="value" [style.height.%]="item.issue*100/issueScale"></div></div>
         <div class="x-axis-label">{{item.time}}</div>
