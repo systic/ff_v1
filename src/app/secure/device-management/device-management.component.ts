@@ -22,8 +22,8 @@ export class DeviceManagementComponent implements OnInit {
   // sort
   sortBy: any;
   orderIn = 'descending';
-
   searchText = '';
+  selectedDevice: any;
 
   constructor(
     private pageTitleService: PageTitleService,
@@ -49,29 +49,20 @@ export class DeviceManagementComponent implements OnInit {
    * add a new device
    */
   addDevice() {
-    this.formData = undefined;
+    this.formData = null;
     this.showForm('add');
   }
 
   /**
-   * update a device only if there is one device selected otherwise ignore
+   * update a device only if there is a device selected otherwise ignore
    */
   updateDevice() {
-    const selectedDevices = this.getSelectedDevices();
-    if (selectedDevices.length === 1) {
-      this.formData = selectedDevices[0];
+    if (this.selectedDevice) {
+      this.formData = this.selectedDevice;
       this.showForm('update');
     }
   }
 
-  /**
-   * returns an array of devices selected by the user
-   */
-  getSelectedDevices() {
-    return this.deviceList.filter( device => {
-      return device.selected === true;
-    });
-  }
 
   /**
    * shows device form
@@ -82,13 +73,15 @@ export class DeviceManagementComponent implements OnInit {
     this.isAddUpdateFormVisible = true;
   }
 
-  deactivateDevices() {
-    this.deviceList.forEach( device => {
-      if (device.selected) {
-        device.activated = false;
-        device.selected = false;
-      }
-    });
+  /**
+   * toggle the selected device's activation status
+   */
+  toggleDeviceActivation() {
+    if (this.selectedDevice) {
+      this.selectedDevice.activated = !this.selectedDevice.activated;
+      this.selectedDevice.selected = false;
+      this.selectedDevice = null;
+    }
   }
 
   sortList(sortBy: string) {
@@ -107,6 +100,28 @@ export class DeviceManagementComponent implements OnInit {
   filterDevices(value: string) {
     this.currentPage = 1;
     this.searchText = value;
+  }
+
+  /**
+   * select a device when clicked on checkbox, but only select one at a time
+   * @param {[type]} currentDevice the device whose checkbox was toggled
+   */
+  selectDevice(currentDevice) {
+    // unselect all devices other than the toggled device
+    this.deviceList.forEach( device => {
+      if (currentDevice !== device) {
+        device.selected = false;
+      }
+    });
+    // toggle device selection
+    currentDevice.selected = !currentDevice.selected;
+
+    // assign selected device if current deivce checkbox is checked else make it null
+    if (currentDevice.selected) {
+      this.selectedDevice = currentDevice;
+    } else {
+      this.selectedDevice = null;
+    }
   }
 
 }

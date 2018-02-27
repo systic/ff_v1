@@ -12,18 +12,23 @@
     margin-bottom: 75px;
 
     .logo-wrapper {
-      width: 106px;
-      height: 96px;
+      width: 175px;
+      height: 100px;
       display: flex;
       justify-content: center;
       padding-top: 13px;
-      border-radius: 0 0 53px 53px;
+      border-radius: 0 0 50% 50%;
       background-color: #fff;
 
       .logo {
 
         img {
           width: 75px;
+        }
+
+        .vf-logo {
+          width: 60px;
+          margin-left: 6px;
         }
       }
     }
@@ -143,15 +148,19 @@
       padding: 0 21px;
 
       .logo-wrapper {
-        width: 70px;
-        height: 74px;
+        width: 125px;
+        height: 80px;
         padding-top: 10px;
-        border-radius: 0 0 35px 35px;
+        border-radius: 0 0 50% 50%;
 
         .logo {
 
           img {
             width: 55.5px;
+          }
+
+          .vf-logo {
+            width: 45px;
           }
         }
       }
@@ -218,12 +227,6 @@
     .login-header {
       margin-bottom: 27px;
       padding: 0 28px;
-
-      .logo-wrapper {
-        width: 70px;
-        height: 78px;
-        padding-top: 14px;
-      }
 
       .header-nav {
         display: none;

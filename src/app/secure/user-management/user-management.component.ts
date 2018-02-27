@@ -22,8 +22,8 @@ export class UserManagementComponent implements OnInit {
   // sort
   sortBy: any;
   orderIn = 'descending';
-
   searchText = '';
+  selectedUser: any;
 
   constructor(
     private pageTitleService: PageTitleService,
@@ -54,24 +54,15 @@ export class UserManagementComponent implements OnInit {
   }
 
   /**
-   * update a user only if there is one user selected otherwise ignore
+   * update a user only if there is a user selected otherwise ignore
    */
   updateUser() {
-    const selectedUsers = this.getSelectedUsers();
-    if (selectedUsers.length === 1) {
-      this.formData = selectedUsers[0];
+    if (this.selectedUser) {
+      this.formData = this.selectedUser;
       this.showForm('update');
     }
   }
 
-  /**
-   * returns an array of users selected by the user
-   */
-  getSelectedUsers() {
-    return this.userList.filter( user => {
-      return user.selected === true;
-    });
-  }
 
   /**
    * shows user form
@@ -82,13 +73,15 @@ export class UserManagementComponent implements OnInit {
     this.isAddUpdateFormVisible = true;
   }
 
-  deactivateUsers() {
-    this.userList.forEach( user => {
-      if (user.selected) {
-        user.activated = false;
-        user.selected = false;
-      }
-    });
+  /**
+   * toggle the selected user's activation status
+   */
+  toggleUserActivation() {
+    if (this.selectedUser) {
+      this.selectedUser.activated = !this.selectedUser.activated;
+      this.selectedUser.selected = false;
+      this.selectedUser = null;
+    }
   }
 
   sortList(sortBy: string) {
@@ -107,6 +100,28 @@ export class UserManagementComponent implements OnInit {
   filterUsers(value: string) {
     this.currentPage = 1;
     this.searchText = value;
+  }
+
+  /**
+   * select a user when clicked on checkbox, but only select one at a time
+   * @param {[type]} currentUser the user whose checkbox was toggled
+   */
+  selectUser(currentUser) {
+    // unselect all users other than the toggled user
+    this.userList.forEach( user => {
+      if (currentUser !== user) {
+        user.selected = false;
+      }
+    });
+    // toggle user selection
+    currentUser.selected = !currentUser.selected;
+
+    // assign selected user if current user checkbox is checked else make it null
+    if (currentUser.selected) {
+      this.selectedUser = currentUser;
+    } else {
+      this.selectedUser = null;
+    }
   }
 
 }

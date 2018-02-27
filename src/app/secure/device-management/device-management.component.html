@@ -15,9 +15,9 @@
           <span class="icons icon-update"></span>
           <span>Update Device</span>
         </a>
-        <a href="javascript:;" class="btn btn-primary bg-grey btn-deactivate" (click)="deactivateDevices()">
+        <a href="javascript:;" class="btn btn-primary bg-grey btn-deactivate" (click)="toggleDeviceActivation()">
           <span class="icons icon-deactivate"></span>
-          <span>Deactivate device</span>
+          <span>{{(selectedDevice && !selectedDevice.activated) ? "A" : "Dea"}}ctivate device</span>
         </a>
         <a href="javascript:;" class="btn btn-primary btn-add" (click)="addDevice()">
           <span class="icons icon-add"></span>
@@ -47,7 +47,7 @@
       </div>
       <div class="device-details-wrapper">
         <div class="header-row">
-          <app-checkbox [(ngModel)]="device.selected" [disabled]="!device.activated">{{device.name}}</app-checkbox>
+          <app-checkbox [ngModel]="device.selected" (ngModelChange)="selectDevice(device)">{{device.name}}</app-checkbox>
         </div>
         <div class="store-name-wrapper">
           <span class="store-status" [ngClass]="device.store.status === 'active' ? 'bg-store-active' : 'bg-store-issue'"></span>
@@ -107,7 +107,7 @@
         <tbody>
           <tr *ngFor="let device of filteredDeviceList | slice:((currentPage-1)*pageSize):((currentPage-1)*pageSize + pageSize)"
             [ngClass]="{'is-deactivated' : !device.activated}">
-            <td class="align-center"><app-checkbox [(ngModel)]="device.selected" [disabled]="!device.activated"></app-checkbox></td>
+            <td class="align-center"><app-checkbox [ngModel]="device.selected" (ngModelChange)="selectDevice(device)"></app-checkbox></td>
             <td>
               <div class="d-flex align-items-center">
                 <span class="icon-container align-item-center"><span [className]="'icons icon-'+device.type"></span></span>

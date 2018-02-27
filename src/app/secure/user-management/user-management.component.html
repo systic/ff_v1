@@ -19,9 +19,9 @@
           <span class="icons icon-reset-password"></span>
           <span>Reset password</span>
         </a>
-        <a href="javascript:;" class="btn btn-primary bg-grey btn-deactivate" (click)="deactivateUsers()">
+        <a href="javascript:;" class="btn btn-primary bg-grey btn-deactivate" (click)="toggleUserActivation()">
           <span class="icons icon-deactivate"></span>
-          <span>Deactivate User</span>
+          <span>{{(selectedUser && !selectedUser.activated) ? "A" : "Dea"}}ctivate user</span>
         </a>
         <a href="javascript:;" class="btn btn-primary btn-add" (click)="addUser()">
           <span class="icons icon-add"></span>
@@ -51,7 +51,7 @@
       </div>
       <div class="user-details-wrapper">
         <div class="header-row">
-          <app-checkbox [(ngModel)]="user.selected" [disabled]="!user.activated">{{user.name}}</app-checkbox>
+          <app-checkbox [ngModel]="user.selected" (ngModelChange)="selectUser(user)">{{user.name}}</app-checkbox>
           <div class="user-role" [ngClass]="{'is-admin' : user.role === 'admin'}">{{user.role}}</div>
         </div>
         <div class="data-row email-address">{{user.email}}</div>
@@ -97,7 +97,7 @@
         <tbody>
           <tr *ngFor="let user of filteredUserList | slice:((currentPage-1)*pageSize):((currentPage-1)*pageSize + pageSize)"
             [ngClass]="{'is-deactivated' : !user.activated}">
-            <td class="align-center"><app-checkbox [(ngModel)]="user.selected" [disabled]="!user.activated"></app-checkbox></td>
+            <td class="align-center"><app-checkbox [ngModel]="user.selected" (ngModelChange)="selectUser(user)"></app-checkbox></td>
             <td>{{user.name}}</td>
             <td>{{user.email}}</td>
             <td>{{user.userId}}</td>

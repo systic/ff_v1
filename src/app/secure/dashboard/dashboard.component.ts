@@ -26,10 +26,6 @@ export class DashboardComponent implements OnInit {
 
   // stores list - country wise to be fetched from api
   countryStoresList: any;
-  // active array of all stores
-  activeStoresList: any;
-  // issue array of all stores
-  issueStoresList: any;
 
   // store counts of the region (North America)
   regionStoreCounts = {
@@ -71,8 +67,6 @@ export class DashboardComponent implements OnInit {
     // get full country wise store list
     this.storesService.getStores()
       .subscribe( response => {
-        this.activeStoresList = [];
-        this.issueStoresList = [];
         this.countryStoresList = StoresCountryOptions;
         const list = response;
 
@@ -82,11 +76,6 @@ export class DashboardComponent implements OnInit {
           const countryCode = list[i].countryCode;
           for (let j = 0; j < this.countryStoresList.length; j++) {
             if (this.countryStoresList[j].countryCode === countryCode) {
-
-              // update active stores list array
-              this.activeStoresList = [...list[i].stores.active, ...this.activeStoresList];
-              // update issue stores list array
-              this.issueStoresList = [...list[i].stores.issue, ...this.issueStoresList];
 
               // update region counts
               this.regionStoreCounts.active += list[i].stores.active.length;
@@ -310,13 +299,13 @@ export class DashboardComponent implements OnInit {
           // set selected marker icon on the selected marker
           this.resetMarkerUrls();
           if (type === 'active') {
-            this.activeStoresList.forEach(item => {
+            this.activeMarkers.forEach(item => {
               if (item.id === storeId) {
                 item.markerUrl = MarkerUrls.activeSelected;
               }
             });
           } else {
-            this.issueStoresList.forEach(item => {
+            this.issueMarkers.forEach(item => {
               if (item.id === storeId) {
                 item.markerUrl = MarkerUrls.issueSelected;
               }
