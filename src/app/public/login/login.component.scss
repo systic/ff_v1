@@ -13,7 +13,7 @@
 
     .logo-wrapper {
       width: 106px;
-      height: 95px;
+      height: 96px;
       display: flex;
       justify-content: center;
       padding-top: 13px;
@@ -24,11 +24,6 @@
 
         img {
           width: 75px;
-        }
-
-        .vf-logo {
-          width: 60px;
-          height: 95px;
         }
       }
     }
@@ -87,8 +82,11 @@
       box-shadow: $default-box-shadow;
 
       .form-heading {
-        font-size: 24px;
         text-align: center;
+        
+        .vf-logo {
+          width: 60px;
+        }
       }
 
       .login-input-group {
@@ -148,10 +146,9 @@
       padding: 0 21px;
 
       .logo-wrapper {
-        width: 125px;
-        height: 80px;
+        width: 70px;
+        height: 74px;
         padding-top: 10px;
-        border-radius: 0 0 50% 50%;
 
         .logo {
 
@@ -228,6 +225,12 @@
       margin-bottom: 27px;
       padding: 0 28px;
 
+      .logo-wrapper {
+        width: 70px;
+        height: 78px;
+        padding-top: 14px;
+      }
+
       .header-nav {
         display: none;
       }
@@ -267,7 +270,10 @@
         padding: 37px 36px 57px;
 
         .form-heading {
-          font-size: 21px;
+          
+          .vf-logo {
+            width: 50px;
+          }
         }
 
         .login-input-group {

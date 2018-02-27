@@ -80,7 +80,7 @@ export class UserManagementComponent implements OnInit {
     if (this.selectedUser) {
       this.selectedUser.activated = !this.selectedUser.activated;
       this.selectedUser.selected = false;
-      this.selectedUser = null;
+      this.selectedUser = undefined;
     }
   }
 
@@ -116,11 +116,11 @@ export class UserManagementComponent implements OnInit {
     // toggle user selection
     currentUser.selected = !currentUser.selected;
 
-    // assign selected user if current user checkbox is checked else make it null
+    // assign selected user if current user checkbox is checked else make it undefined
     if (currentUser.selected) {
       this.selectedUser = currentUser;
     } else {
-      this.selectedUser = null;
+      this.selectedUser = undefined;
     }
   }
 

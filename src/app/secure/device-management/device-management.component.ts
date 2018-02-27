@@ -49,7 +49,7 @@ export class DeviceManagementComponent implements OnInit {
    * add a new device
    */
   addDevice() {
-    this.formData = null;
+    this.formData = undefined;
     this.showForm('add');
   }
 
@@ -80,7 +80,7 @@ export class DeviceManagementComponent implements OnInit {
     if (this.selectedDevice) {
       this.selectedDevice.activated = !this.selectedDevice.activated;
       this.selectedDevice.selected = false;
-      this.selectedDevice = null;
+      this.selectedDevice = undefined;
     }
   }
 
@@ -116,11 +116,11 @@ export class DeviceManagementComponent implements OnInit {
     // toggle device selection
     currentDevice.selected = !currentDevice.selected;
 
-    // assign selected device if current deivce checkbox is checked else make it null
+    // assign selected device if current deivce checkbox is checked else make it undefined
     if (currentDevice.selected) {
       this.selectedDevice = currentDevice;
     } else {
-      this.selectedDevice = null;
+      this.selectedDevice = undefined;
     }
   }
 
